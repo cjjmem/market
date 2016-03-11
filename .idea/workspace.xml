@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b3f0ac4-b17e-41da-8bec-f5e2db806c20" name="默认的" comment="">
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\auction.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\brands.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\cart.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\email_list.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\group_buy.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\invoice_query.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\new_articles.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\order_query.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\promotion_info.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\top10.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\vote.lbi.php" afterPath="" />
+      <change type="DELETED" beforePath="F:\web\www\market.com\upload\temp\compiled\vote_list.lbi.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/static_caches/cat_option_static.php" afterPath="$PROJECT_DIR$/upload/temp/static_caches/cat_option_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/static_caches/cat_pid_releate.php" afterPath="$PROJECT_DIR$/upload/temp/static_caches/cat_pid_releate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/category_tree.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/category_tree.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/data/config.php" afterPath="$PROJECT_DIR$/upload/data/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/help.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/help.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/index.dwt.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/index.dwt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/caches/f/index_40F756F0.php" afterPath="$PROJECT_DIR$/upload/temp/caches/f/index_40F756F0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/index_ad.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/index_ad.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/member_info.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/member_info.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/page_footer.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/page_footer.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/page_header.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/page_header.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/recommend_best.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/recommend_best.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/recommend_hot.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/recommend_hot.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/recommend_new.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/recommend_new.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/compiled/recommend_promotion.lbi.php" afterPath="$PROJECT_DIR$/upload/temp/compiled/recommend_promotion.lbi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/static_caches/shop_config.php" afterPath="$PROJECT_DIR$/upload/temp/static_caches/shop_config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/temp/query_caches/sqlcache_config_file_f9f0cbf22e195ec65410f10b0ee90167.php" afterPath="$PROJECT_DIR$/upload/temp/query_caches/sqlcache_config_file_f9f0cbf22e195ec65410f10b0ee90167.php" />
+    </list>
+    <ignored path="market.com.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="market.com" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="lib.debug.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/upload/includes/lib.debug.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6497623" vertical-offset="4370" max-vertical-offset="10680">
+              <caret line="333" column="4" selection-start-line="333" selection-start-column="4" selection-end-line="333" selection-end-column="4" />
+              <folding>
+                <marker date="1334114182000" expanded="false" signature="7013:7025" placeholder="..." />
+                <marker date="1334114182000" expanded="false" signature="10810:10827" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="13214:13240" placeholder="..." />
+                <marker date="1334114182000" expanded="false" signature="13939:13965" placeholder="..." />
+                <marker date="1334114182000" expanded="false" signature="14082:14108" placeholder="..." />
+                <marker date="1334114182000" expanded="false" signature="15065:15114" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="15328:15949" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="16108:16742" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="17160:17686" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="17188:17355" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="17381:17547" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="17571:17666" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="17752:18271" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="17821:18250" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="17854:17995" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="21654:22359" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="21688:21880" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="21907:21964" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="21991:22339" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="22409:22552" placeholder="..." />
+                <marker date="1334114182000" expanded="true" signature="22437:22532" placeholder="{...}" />
+                <marker date="1334114182000" expanded="true" signature="22621:22749" placeholder="..." />
+                <marker date="1334114182000" expanded="false" signature="22654:22697" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2" />
+    <option name="width" value="1438" />
+    <option name="height" value="862" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="添加" />
+    <OptionsSetting value="true" id="移除" />
+    <OptionsSetting value="true" id="签出" />
+    <OptionsSetting value="true" id="更新" />
+    <OptionsSetting value="true" id="状态" />
+    <OptionsSetting value="true" id="编辑" />
+    <ConfirmationsSetting value="0" id="添加" />
+    <ConfirmationsSetting value="0" id="移除" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="market.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="market.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="market.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="market.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="market.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="org.jetbrains.plugins.terminal.TerminalOptionsConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b3f0ac4-b17e-41da-8bec-f5e2db806c20" name="默认的" comment="" />
+      <created>1457661984903</created>
+      <option name="number" value="Default" />
+      <updated>1457661984903</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2" y="0" width="1438" height="862" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="更改" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26415095" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/upload/includes/lib.debug.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6497623" vertical-offset="4370" max-vertical-offset="10680">
+          <caret line="333" column="4" selection-start-line="333" selection-start-column="4" selection-end-line="333" selection-end-column="4" />
+          <folding>
+            <marker date="1334114182000" expanded="false" signature="7013:7025" placeholder="..." />
+            <marker date="1334114182000" expanded="false" signature="10810:10827" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="13214:13240" placeholder="..." />
+            <marker date="1334114182000" expanded="false" signature="13939:13965" placeholder="..." />
+            <marker date="1334114182000" expanded="false" signature="14082:14108" placeholder="..." />
+            <marker date="1334114182000" expanded="false" signature="15065:15114" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="15328:15949" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="16108:16742" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="17160:17686" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="17188:17355" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="17381:17547" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="17571:17666" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="17752:18271" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="17821:18250" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="17854:17995" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="21654:22359" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="21688:21880" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="21907:21964" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="21991:22339" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="22409:22552" placeholder="..." />
+            <marker date="1334114182000" expanded="true" signature="22437:22532" placeholder="{...}" />
+            <marker date="1334114182000" expanded="true" signature="22621:22749" placeholder="..." />
+            <marker date="1334114182000" expanded="false" signature="22654:22697" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
