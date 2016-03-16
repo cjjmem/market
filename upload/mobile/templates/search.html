@@ -1,55 +1,256 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ECShop_mobile</title>
-</head>
-<body>
 
-<form name="searchForm" method="get" action="search.php">
- <input name="keywords" type="text" />
- <input type="submit" value="商品搜索"/>
-</form>
-{if $searchkeywords}
- 热门搜索 ：
- {foreach from=$searchkeywords item=val}
- <a href="search.php?keywords={$val|escape:url}">{$val}</a>
- {/foreach}
-{/if}
-<br/>--------------<br/>
-当前搜索关键词：{$keywords}<br/><br/>
-{if $goods_data}
-<form action="search.php" method="post" name="listform">
-    <select name="sort">
-    {html_options options=$lang.sort selected=$pager.search.sort}
-    </select>
-    <select name="order">
-    {html_options options=$lang.order selected=$pager.search.order}
-    </select>
-    <input type="submit" value="进行排序" />
-    <input type="hidden" name="page" value="{$pager.page}" />
-    {foreach from=$pager.search key=key item=item}
-    {if $key neq "sort" and $key neq "order"}
-      {if $key eq 'keywords'}
-        <input type="hidden" name="{$key}" value="{$item|escape:decode_url}" />
-      {else}
-        <input type="hidden" name="{$key}" value="{$item}" />
-      {/if}
-    {/if}
-    {/foreach}
-  </form>
-{/if}
-{foreach from=$goods_data item=goods name=goods_list}
- {$smarty.foreach.goods_list.iteration}.<a href='goods.php?id={$goods.goods_id}'>{$goods.goods_name}</a>[{$goods.shop_price}]<br/>
-{foreachelse}
-    暂无此类商品<br/>
-{/foreach}<br/><br/>
-{if $pagebar}
-{$pagebar}<br/>
-{/if}
-<br/>--------------<br/>
-<a href="javascript:history.back(-1)">回上一页</a><br/>
-<br/><a href='index.php'>返回首页</a>
-{$footer}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品搜索</title>
+    <meta name="author" content="m.jd.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" type="text/css" href="../css/base2013.css" charset="gbk"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../css/2013/sale/sale.css" charset="gbk"/>
+
+
+    <link rel="apple-touch-icon-precomposed" href="../../m.jd.com/images/apple-touch-icon.png"/>
+    <script type="text/javascript">
+        var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
+        var _isWebKit = '__proto__' in {};//是否是webkit内核
+        if(_isWebKit){//如果是webkit内核，则分模块使用zepto
+            //要使用zeptojs的路径列表，可以做为分模块替换的开关
+            var _locationList=new Array();
+            //活动模块
+            _locationList.push('../activity/proActList');
+            _locationList.push('../activity/proActWareList');
+            _locationList.push('../activity/list');
+            //商品分类模块
+            _locationList.push('../category/');
+            //京东快讯模块
+            _locationList.push('../newslist.html');
+            _locationList.push('../newslist/');
+            _locationList.push('../news/');
+            //机票模块
+            _locationList.push('../airline/');
+            //酒店模块
+            _locationList.push('../hotel/');
+            //团购模块
+            _locationList.push('../tuan/');
+            //首页相关
+            _locationList.push('../hotbrand.html');//品牌馆
+            //商品筛选相关
+            _locationList.push('../ware/expandSort.action');
+            _locationList.push('../ware/categoryFilter.action');
+            _locationList.push('../ware/search.action');
+            _locationList.push('../products/');
+
+            _locationList.push('../notice/');//通告模块
+            _locationList.push('../coupons/');//随地惠模块
+            _locationList.push('../chongzhi/');//手机充值模块
+            _locationList.push('../comment/');//手机推荐模块
+            _locationList.push('../pay/');//支付
+            _locationList.push('../order/');//订单
+            var _needReplace = false;
+            //如果当前路径符合要使用的路径规则，则进行替换
+            for(var i=0;i<_locationList.length;i++){
+                if(_winLocation.indexOf(_locationList[i])!=-1){
+                    _needReplace=true;
+                    break;
+                }
+            }
+            //如果是首页的话，则使用zepto
+            var _tmp = _winLocation.replace(/(^http:\/\/)|(\/*$)/g,'');
+            if(_tmp.indexOf('/')<0 || (_tmp.split('/').length<=2 && _tmp.indexOf('/index')>=0)){
+                _needReplace=true;
+            }
+            //如果是商品详情页的话，则使用zepto
+            var _dlocationList=new Array();
+            _dlocationList.push(/\/product\/([0-9]+)\.html/);
+            _dlocationList.push(/\/orderComment\/([0-9]+)\.html/);
+            _dlocationList.push(/\/consultations\/([0-9]+)\.html/);
+            _dlocationList.push(/\/consultations\/([0-9]+)-([0-9]+)\.html/);
+            _dlocationList.push(/\/comments\/([0-9]+)\.html/);
+            for(var i=0,len=_dlocationList.length;i<len;i++){
+                if(_dlocationList[i].test(_winLocation)){
+                    _needReplace=true;
+                    break;
+                }
+            }
+            if(_needReplace){
+                document.write('<script src="../js/zepto.min.js"><\/script>');
+                document.write('<script type="text/javascript">window.jQuery=window.Zepto;<\/script>');
+            }else{
+                document.write('<script src="../js/jquery-1.6.2.min.js"><\/script>');
+            }
+        }else{//如果是非webkit内核直接使用jquery
+            document.write('<script src="../js/jquery-1.6.2.min.js"><\/script>');
+        }
+    </script>
+    <script type="text/javascript" src="../js/html5/common.js"></script>
+    <script type="text/javascript" src="../js/html5/spin.min.js"></script>
+</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+    <div class="new-header">
+        <a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+        <h2>商品列表</h2>
+        <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    </div>
+    <div class="new-jd-tab" style="display:none" id="jdkey">
+        <div class="new-tbl-type">
+            <a href="../index.html@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
+                <span class="icon">首页</span>
+                <p style="color:#6e6e6e;">首页</p>
+            </a>
+            <a href="../category/all.html@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
+                <span class="icon2">分类搜索</span>
+                <p style="color:#6e6e6e;">分类搜索</p>
+            </a>
+            <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                <span class="icon3">购物车</span>
+                <p style="color:#6e6e6e;">购物车</p>
+            </a>
+            <a href="../user/home.action@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
+                <span class="icon4">我的京东</span>
+                <p style="color:#6e6e6e;">我的京东</p>
+            </a>
+        </div>
+    </div>
+</header>
+<input type="hidden" id="page" value="1"/>
+<input type="hidden" id="module" value="1"/>
+<div class="new-ct">
+<div class="new-search new-goods-lst">
+<div class="new-goods-tab">
+    <span class="tit">服装城<a href="activity.action@type=101&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="link-acition">活动列表</a></span>
+    <div class="new-goods-btn">
+        <a id="m2" href="search.php?list=view" class="new-g-tbn">列表图</a>
+        <a id="m1" href="search.php?list=list" class="new-g-tbn2">列表</a>
+        <a id="m3" href="search.php?list=up" class="new-g-tbn3">放大</a>
+    </div>
+</div>
+<ul class="new-mu_l2w">
+    <!--列表-->
+    <li class="new-mu_l2">
+        <a href="../product/1.html" class="new-mu_l2a">
+            <span class="new-mu_tmb"><img imgsrc="http://img13.360buyimg.com/n4/g15/M07/05/1D/rBEhWlIUf7oIAAAAAALnZATd9X4AACSsAGXLa8AAud8547.jpg" src="../images/touch2013/no_100_100.png" width="100" height="100"  alt=""/></span>
+                 <span class="new-mu_l2cw">
+                      <strong class="new-mu_l2h">杉杉男装FIRS 2014春季新款时尚格纹长袖衬衫 商务高档男士衬衣 TCTB0365蓝白灰绿格子 40</strong>
+                        <span class="new-mu_l2h new-mu_l2h-v1"><span class="new-txt-rd2"></span></span>
+                     <span class="new-mu_l2c new-p-re"><strong class="new-txt-rd2">&yen;159.00</strong>
+                            <span class="new-txt-price" style="color:red"></span>
+                     </span>
+                 </span>
+        </a>
+    </li>
+
+</ul>
+
+</div>
+
+
+<div class="new-paging">
+    <div class="new-tbl-type">
+        <div class="new-tbl-cell">
+            <span class="new-a-prve"><span>上一页</span></span>
+        </div>
+        <div class="new-tbl-cell new-p-re">
+            <div class="new-a-page">
+                <span class="new-open">1/5</span>
+            </div>
+            <select class="new-select" onchange="window.location.href=this.value">
+                <option value="hotSaleWare.action@type=101&page=1&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" selected>第1页</option>
+                <option value="hotSaleWare.action@type=101&page=2&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" >第2页</option>
+                <option value="hotSaleWare.action@type=101&page=3&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" >第3页</option>
+                <option value="hotSaleWare.action@type=101&page=4&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" >第4页</option>
+                <option value="hotSaleWare.action@type=101&page=5&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911" >第5页</option>
+            </select>
+        </div>
+        <div class="new-tbl-cell">
+            <a class="new-a-next" href="hotSaleWare.action@type=101&page=2&module=1&resourceType=index_floor&resourceValue=t101&sid=e0d0f025d6d3e8e8d7be5428c43ef911"><span>下一页</span></a>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        var m = $('#module').val();
+        $('#m'+m).addClass('on');
+    })
+</script>
+
+<div class="login-area" id="footer">
+    <div class="login">
+        {if $smarty.session.user_id eq 0}
+            <a href="user.php?act=login">登录</a>
+        {else}
+            <a href="user.php?act=login">个人中心</a>
+        {/if}
+        <span class="lg-bar">|</span>
+        <a href="user.php?act=register">注册</a>
+        <span  class="new-fr"><a href="#">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+    </div>
+
+    <!--<div class="version">
+        <a href="#">标准版</a>
+        <a href="#" class="on">触屏版</a>
+        <a href="#" id="toPcHome">电脑版</a>
+    </div>-->
+    <div class="copyright">&copy;行政学院 </div>
+</div>
+
+
+<script type="text/javascript">
+    $("#unsupport").hide();
+    if(!testLocalStorage()){ //not support html5
+        if(0!=0 && !$clearCart && !$teamId){
+            $("#html5_cart_num").text(0>0>0);
+        }
+    }else{
+        updateToolBar('');
+    }
+
+    $("#html5_cart").click(function(){
+//	syncCart('e0d0f025d6d3e8e8d7be5428c43ef911',true);
+        location.href='../cart/cart.action';
+    });
+
+    function reSearch(){
+        var depCity = window.sessionStorage.getItem("airline_depCityName");
+        if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+            var airStr = '<form action="../airline/list.action" method="post" id="reseach">'
+                    +'<input type="hidden" name="sid"  value="e0d0f025d6d3e8e8d7be5428c43ef911"/>'
+                    +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+                    +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+                    +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+                    +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+                    +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+                    +'</form>';
+            $("body").append(airStr);
+            $("#reseach").submit();
+        }else{
+            window.location.href='../airline/index.action@sid=e0d0f025d6d3e8e8d7be5428c43ef911';
+        }
+    }
+    //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('../index/addClientCookieVal.json',function(d){
+            $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+        var downloadUrl = $(this).attr('url');
+        jQuery.post('../index/addClientCookieVal.json',function(d){
+            window.location.href=downloadUrl;
+        });
+    });
+
+</script>
 </body>
 </html>

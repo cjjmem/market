@@ -1,6 +1,6 @@
 首页(in do)
 http://market.com/mobile/index.php
-详情页
+详情页(in do)
 http://market.com/mobile/goods.php?id=9
 查看商品图片页
 http://market.com/mobile/goods.php?act=view_img&id=9
@@ -10,9 +10,9 @@ http://market.com/mobile/comment.php?g_id=9
 http://market.com/mobile/user.php?act=login
 注册页(in do)
 http://market.com/mobile/user.php?act=register
-分类页
+分类页(in do)
 http://market.com/mobile/category.php
-商品列表页
+商品列表页(in do)
 http://market.com/mobile/category.php?c_id=13
 文章页
 http://market.com/mobile/article.php?act=detail&a_id=31
@@ -22,5 +22,5 @@ http://market.com/mobile/brands.php
 
 购物车页面
 http://market.com/mobile/buy.php?act=checkout
-个人中心页面
+个人中心页面(in do)
 http://market.com/mobile/user.php?act=do_login

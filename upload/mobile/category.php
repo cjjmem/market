@@ -17,6 +17,9 @@ define('IN_ECS', true);
 
 require(dirname(__FILE__) . '/includes/init.php');
 
+
+
+
 $c_id = !empty($_GET['c_id']) ? intval($_GET['c_id']) : 0;
 if ($c_id <= 0)
 {
@@ -103,6 +106,7 @@ else
 
     $smarty->assign('cat_array', $cat_array);
 }
+
 
 $smarty->assign('footer', get_footer());
 $smarty->display('category.html');

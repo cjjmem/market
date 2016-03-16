@@ -27,10 +27,7 @@ if (empty($_GET['encode']))
     }
     $string['search_encode_time'] = time();
     $string = str_replace('+', '%2b', base64_encode(serialize($string)));
-
-    header("Location: search.php?encode=$string\n");
-
-    exit;
+    header("Location: search.php?list=".$_GET['list']."&encode=$string\n");
 }
 else
 {
@@ -432,8 +429,19 @@ else
         'sc_ds'      => $_REQUEST['sc_ds'],
         'outstock'   => $_REQUEST['outstock']
     );
+
+    /*三种模式显示列表*/
+    $a  = array('view','list','up');
+    if(empty($_GET['list'])){
+        $listview =  'list';
+    }else{
+        $listview = $_GET['list'];
+        if(!in_array($listview,$a))
+            $listview =  'list';
+    }
+
     $pager['search'] = array_merge($pager['search'], $attr_arg);
-    $pager = get_pager('search.php', $pager['search'], $count, $page, $size);
+    $pager = get_pager('search.php?list='.$listview, $pager['search'], $count, $page, $size);
     $smarty->assign('pager', $pager);
 
     $pagebar = get_wap_pager($count, $size, $page, $url_format, 'page');
@@ -460,7 +468,20 @@ else
     }
     $smarty->assign('searchkeywords', $searchkeywords);
     $smarty->assign('footer', get_footer());
-    $smarty->display('search.html');
+
+    switch($listview){
+        case 'up':
+            $smarty->display('search_up.html');
+            break;
+        case 'view':
+            $smarty->display('search_view.html');
+            break;
+        default:
+            $smarty->display('search.html');
+            break;
+    }
+
+
 }
 
 /*------------------------------------------------------ */
