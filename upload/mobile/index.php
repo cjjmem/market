@@ -15,8 +15,8 @@
 
 define('IN_ECS', true);
 define('ECS_ADMIN', true);
-
 require(dirname(__FILE__) . '/includes/init.php');
+
 
 $best_goods = get_recommend_goods('best');
 $best_num = count($best_goods);

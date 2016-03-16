@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-03-11 10:43:01
+Date: 2016-03-11 11:32:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,11 +93,12 @@ CREATE TABLE `ecs_ad` (
   PRIMARY KEY (`ad_id`),
   KEY `position_id` (`position_id`),
   KEY `enabled` (`enabled`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_ad
 -- ----------------------------
+INSERT INTO `ecs_ad` VALUES ('193', '159', '0', '首页左侧广告', 'http://ectouch.cn/', '1413916122102071507.png', '1381219200', '1983427200', '', '', '', '0', '1');
 
 -- ----------------------------
 -- Table structure for ecs_admin_action
@@ -238,7 +239,7 @@ CREATE TABLE `ecs_admin_log` (
   PRIMARY KEY (`log_id`),
   KEY `log_time` (`log_time`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=467 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=471 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_admin_log
@@ -709,6 +710,10 @@ INSERT INTO `ecs_admin_log` VALUES ('463', '1245223611', '1', '还原数据库�
 INSERT INTO `ecs_admin_log` VALUES ('464', '1457634264', '1', '编辑商店设置: ', '127.0.0.1');
 INSERT INTO `ecs_admin_log` VALUES ('465', '1457634334', '1', '编辑商店设置: ', '127.0.0.1');
 INSERT INTO `ecs_admin_log` VALUES ('466', '1457634347', '1', '编辑商店设置: ', '127.0.0.1');
+INSERT INTO `ecs_admin_log` VALUES ('467', '1457636733', '1', '编辑支付方式: 货到付款', '127.0.0.1');
+INSERT INTO `ecs_admin_log` VALUES ('468', '1457636744', '1', '编辑会员注册项: 家庭电话', '127.0.0.1');
+INSERT INTO `ecs_admin_log` VALUES ('469', '1457636751', '1', '编辑会员注册项: 办公电话', '127.0.0.1');
+INSERT INTO `ecs_admin_log` VALUES ('470', '1457636755', '1', '编辑会员注册项: MSN', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for ecs_admin_message
@@ -761,7 +766,7 @@ CREATE TABLE `ecs_admin_user` (
 -- ----------------------------
 -- Records of ecs_admin_user
 -- ----------------------------
-INSERT INTO `ecs_admin_user` VALUES ('1', 'admin', '475647150@qq.com', '8badcc4dd035c54f8fc3ff6047daaeaf', '549', '1457634246', '1457634258', '127.0.0.1', 'all', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '0', null, null);
+INSERT INTO `ecs_admin_user` VALUES ('1', 'admin', '475647150@qq.com', '8badcc4dd035c54f8fc3ff6047daaeaf', '549', '1457634246', '1457635500', '127.0.0.1', 'all', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '0', null, null);
 INSERT INTO `ecs_admin_user` VALUES ('2', 'bjgonghuo1', 'bj@163.com', 'd0c015b6eb9a280f318a4c0510581e7e', null, '1245044099', '0', '', '', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '1', '', null);
 INSERT INTO `ecs_admin_user` VALUES ('3', 'shhaigonghuo1', 'shanghai@163.com', '4146fecce77907d264f6bd873f4ea27b', null, '1245044202', '0', '', '', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '2', '', null);
 
@@ -811,11 +816,12 @@ CREATE TABLE `ecs_ad_position` (
   `position_desc` varchar(255) NOT NULL DEFAULT '',
   `position_style` text NOT NULL,
   PRIMARY KEY (`position_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_ad_position
 -- ----------------------------
+INSERT INTO `ecs_ad_position` VALUES ('159', '首页左侧广告', '240', '140', '', '<table cellpadding=\"0\" cellspacing=\"0\">\r\n{foreach from=$ads item=ad}\r\n<tr><td>{$ad}</td></tr>\r\n{/foreach}\r\n</table>');
 
 -- ----------------------------
 -- Table structure for ecs_affiliate_log
@@ -1446,12 +1452,12 @@ CREATE TABLE `ecs_cart` (
   `goods_attr_id` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`rec_id`),
   KEY `session_id` (`session_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_cart
 -- ----------------------------
-INSERT INTO `ecs_cart` VALUES ('43', '0', 'e93e3abbdf79eb76fa66d59a1d4195ef', '9', 'ECS000009', '0', '诺基亚E66', '2757.60', '2298.00', '1', '', '1', '', '0', '0', '0', '0', '0', '');
+INSERT INTO `ecs_cart` VALUES ('46', '6', 'e93e3abbdf79eb76fa66d59a1d4195ef', '19', 'ECS000019', '0', '三星SGH-F258', '1029.60', '858.00', '1', '', '1', '', '0', '0', '0', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for ecs_category
@@ -2445,7 +2451,7 @@ CREATE TABLE `ecs_order_goods` (
   PRIMARY KEY (`rec_id`),
   KEY `order_id` (`order_id`),
   KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_order_goods
@@ -2481,6 +2487,7 @@ INSERT INTO `ecs_order_goods` VALUES ('28', '17', '24', 'P806', 'ECS000024', '0'
 INSERT INTO `ecs_order_goods` VALUES ('29', '18', '24', 'P806', 'ECS000024', '0', '5', '2400.00', '100.00', '', '0', '1', '', '0', '0', '');
 INSERT INTO `ecs_order_goods` VALUES ('30', '19', '12', '摩托罗拉A810', 'ECS000012', '0', '2', '1179.60', '933.85', '', '2', '1', '', '0', '0', '');
 INSERT INTO `ecs_order_goods` VALUES ('31', '19', '24', 'P806', 'ECS000024', '0', '2', '2400.00', '1850.00', '颜色:灰色 \n', '2', '1', '', '0', '0', '167');
+INSERT INTO `ecs_order_goods` VALUES ('32', '20', '17', '夏新N7', 'ECS000017', '0', '1', '2760.00', '2300.00', '', '0', '1', '', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for ecs_order_info
@@ -2559,7 +2566,7 @@ CREATE TABLE `ecs_order_info` (
   KEY `pay_id` (`pay_id`),
   KEY `extension_code` (`extension_code`,`extension_id`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_order_info
@@ -2583,6 +2590,7 @@ INSERT INTO `ecs_order_info` VALUES ('16', '2009061525429', '1', '1', '4', '2', 
 INSERT INTO `ecs_order_info` VALUES ('17', '2009061503335', '1', '4', '0', '0', '刘先生', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', 'ecshop@ecshop.com', '', '', '', '3', '城际快递', '1', '余额支付', '等待所有商品备齐后再发', '', '', '', '', '', '', '1900.00', '10.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '0.00', '0', '本站', '1245047978', '1245047978', '1245047978', '1245048189', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
 INSERT INTO `ecs_order_info` VALUES ('18', '2009061510313', '1', '1', '0', '2', '刘先生', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', 'ecshop@ecshop.com', '', '', '', '3', '城际快递', '1', '余额支付', '等待所有商品备齐后再发', '', '', '', '', '', '', '500.00', '10.00', '0.00', '0.00', '0.00', '0.00', '0.00', '500.00', '0', '0.00', '0.00', '0.00', '0', '本站', '1245048585', '1245048585', '1245048585', '0', '0', '0', '0', '', 'group_buy', '8', '', '', '0', '', '0.00', '0', '0', '0.00');
 INSERT INTO `ecs_order_info` VALUES ('19', '2009061909851', '1', '1', '1', '2', '刘先生', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', 'ecshop@ecshop.com', '', '', '', '3', '城际快递', '1', '余额支付', '等待所有商品备齐后再发', '', '', '', '', '', '', '5567.70', '10.00', '0.00', '0.00', '0.00', '0.00', '0.00', '5577.70', '0', '0.00', '0.00', '0.00', '0', '本站', '1245384008', '1245384008', '1245384008', '1245384049', '0', '0', '0', '232421', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
+INSERT INTO `ecs_order_info` VALUES ('20', '2016031194995', '6', '0', '0', '0', 'chenjunjia', '1', '10', '141', '1143', 'a', 'a', 'a', '', '7', '', '', '', '5', '申通快递', '1', '余额支付', '', '', '', '', '', '', '', '2300.00', '15.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '2315.00', '0', '', '1457637400', '0', '0', '0', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
 
 -- ----------------------------
 -- Table structure for ecs_pack
@@ -2650,7 +2658,7 @@ CREATE TABLE `ecs_payment` (
 -- ----------------------------
 INSERT INTO `ecs_payment` VALUES ('1', 'balance', '余额支付', '0', '使用帐户余额支付。只有会员才能使用，通过设置信用额度，可以透支。', '0', 'a:0:{}', '1', '0', '1');
 INSERT INTO `ecs_payment` VALUES ('2', 'bank', '银行汇款/转帐', '0', '银行名称\n收款人信息：全称 ××× ；帐号或地址 ××× ；开户行 ×××。\n注意事项：办理电汇时，请在电汇单“汇款用途”一栏处注明您的订单号。', '0', 'a:0:{}', '1', '0', '0');
-INSERT INTO `ecs_payment` VALUES ('3', 'cod', '货到付款', '0', '开通城市：×××\n货到付款区域：×××', '0', 'a:0:{}', '1', '1', '0');
+INSERT INTO `ecs_payment` VALUES ('3', 'cod', '货到付款', '0', '开通城市：×××\r\n货到付款区域：×××', '0', 'a:0:{}', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for ecs_pay_log
@@ -2663,7 +2671,7 @@ CREATE TABLE `ecs_pay_log` (
   `order_type` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `is_paid` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_pay_log
@@ -2686,6 +2694,7 @@ INSERT INTO `ecs_pay_log` VALUES ('15', '15', '17054.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('16', '16', '0.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('17', '17', '0.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('18', '18', '0.00', '0', '0');
+INSERT INTO `ecs_pay_log` VALUES ('19', '20', '2315.00', '0', '0');
 
 -- ----------------------------
 -- Table structure for ecs_plugins
@@ -6196,10 +6205,10 @@ CREATE TABLE `ecs_reg_fields` (
 -- ----------------------------
 -- Records of ecs_reg_fields
 -- ----------------------------
-INSERT INTO `ecs_reg_fields` VALUES ('1', 'MSN', '0', '1', '1', '1');
+INSERT INTO `ecs_reg_fields` VALUES ('1', 'MSN', '0', '0', '1', '0');
 INSERT INTO `ecs_reg_fields` VALUES ('2', 'QQ', '0', '1', '1', '1');
-INSERT INTO `ecs_reg_fields` VALUES ('3', '办公电话', '0', '1', '1', '1');
-INSERT INTO `ecs_reg_fields` VALUES ('4', '家庭电话', '0', '1', '1', '1');
+INSERT INTO `ecs_reg_fields` VALUES ('3', '办公电话', '0', '0', '1', '0');
+INSERT INTO `ecs_reg_fields` VALUES ('4', '家庭电话', '0', '0', '1', '0');
 INSERT INTO `ecs_reg_fields` VALUES ('5', '手机', '0', '1', '1', '1');
 INSERT INTO `ecs_reg_fields` VALUES ('6', '密码找回问题', '0', '1', '1', '1');
 
@@ -6257,7 +6266,9 @@ CREATE TABLE `ecs_sessions` (
 -- ----------------------------
 -- Records of ecs_sessions
 -- ----------------------------
-INSERT INTO `ecs_sessions` VALUES ('e93e3abbdf79eb76fa66d59a1d4195ef', '1457663642', '0', '0', '127.0.0.1', '0', '0', '1.00', '0', 'a:0:{}');
+INSERT INTO `ecs_sessions` VALUES ('e93e3abbdf79eb76fa66d59a1d4195ef', '1457666229', '6', '0', '127.0.0.1', 'cjjmem', '1', '1.00', '475647150@qq.com', 'a:3:{s:9:\"last_time\";s:1:\"0\";s:7:\"last_ip\";s:0:\"\";s:10:\"login_fail\";i:0;}');
+INSERT INTO `ecs_sessions` VALUES ('1c53eed80114433fa29cd07588580c3d', '1457665488', '0', '0', '127.0.0.1', '0', '0', '1.00', '0', 'a:4:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:6:\"本站\";s:10:\"login_fail\";i:0;s:12:\"captcha_word\";s:16:\"YWVlOWVlZjdkMA==\";}');
+INSERT INTO `ecs_sessions` VALUES ('f4f64f96a6804d1d941110da997e44ba', '1457665551', '0', '1', '127.0.0.1', '0', '0', '0.00', '0', 'a:5:{s:12:\"captcha_word\";s:16:\"NTg3N2E1ZGMyNg==\";s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1457636590;s:12:\"suppliers_id\";s:1:\"0\";}');
 
 -- ----------------------------
 -- Table structure for ecs_sessions_data
@@ -6274,6 +6285,7 @@ CREATE TABLE `ecs_sessions_data` (
 -- ----------------------------
 -- Records of ecs_sessions_data
 -- ----------------------------
+INSERT INTO `ecs_sessions_data` VALUES ('e93e3abbdf79eb76fa66d59a1d4195ef', '1457666174', 'a:5:{s:9:\"last_time\";s:1:\"0\";s:7:\"last_ip\";s:0:\"\";s:10:\"login_fail\";i:0;s:14:\"flow_consignee\";a:14:{s:10:\"address_id\";i:0;s:9:\"consignee\";s:10:\"chenjunjia\";s:7:\"country\";s:1:\"1\";s:8:\"province\";s:2:\"10\";s:4:\"city\";s:3:\"141\";s:8:\"district\";s:4:\"1143\";s:5:\"email\";s:1:\"7\";s:7:\"address\";s:1:\"a\";s:7:\"zipcode\";s:1:\"a\";s:3:\"tel\";s:1:\"a\";s:6:\"mobile\";s:0:\"\";s:13:\"sign_building\";s:0:\"\";s:9:\"best_time\";s:0:\"\";s:7:\"user_id\";s:1:\"6\";}s:10:\"flow_order\";a:7:{s:11:\"shipping_id\";i:0;s:6:\"pay_id\";i:0;s:7:\"pack_id\";i:0;s:7:\"card_id\";i:0;s:5:\"bonus\";i:0;s:8:\"integral\";i:0;s:7:\"surplus\";i:0;}}');
 
 -- ----------------------------
 -- Table structure for ecs_shipping
@@ -6491,7 +6503,7 @@ INSERT INTO `ecs_shop_config` VALUES ('508', '5', 'smtp_ssl', 'select', '0,1', '
 INSERT INTO `ecs_shop_config` VALUES ('601', '6', 'integrate_code', 'hidden', '', '', 'ecshop', '1');
 INSERT INTO `ecs_shop_config` VALUES ('602', '6', 'integrate_config', 'hidden', '', '', '', '1');
 INSERT INTO `ecs_shop_config` VALUES ('603', '6', 'hash_code', 'hidden', '', '', '31693422540744c0a6b6da635b7a5a93', '1');
-INSERT INTO `ecs_shop_config` VALUES ('604', '6', 'template', 'hidden', '', '', 'default', '1');
+INSERT INTO `ecs_shop_config` VALUES ('604', '6', 'template', 'hidden', '', '', 'mbyunchaoshi2015', '1');
 INSERT INTO `ecs_shop_config` VALUES ('605', '6', 'install_date', 'hidden', '', '', '1457663048', '1');
 INSERT INTO `ecs_shop_config` VALUES ('606', '6', 'ecs_version', 'hidden', '', '', 'v2.7.3', '1');
 INSERT INTO `ecs_shop_config` VALUES ('607', '6', 'sms_user_name', 'hidden', '', '', '', '1');
@@ -6503,7 +6515,7 @@ INSERT INTO `ecs_shop_config` VALUES ('612', '6', 'sms_total_money', 'hidden', '
 INSERT INTO `ecs_shop_config` VALUES ('613', '6', 'sms_balance', 'hidden', '', '', '', '1');
 INSERT INTO `ecs_shop_config` VALUES ('614', '6', 'sms_last_request', 'hidden', '', '', '', '1');
 INSERT INTO `ecs_shop_config` VALUES ('616', '6', 'affiliate', 'hidden', '', '', 'a:3:{s:6:\"config\";a:7:{s:6:\"expire\";d:24;s:11:\"expire_unit\";s:4:\"hour\";s:11:\"separate_by\";i:0;s:15:\"level_point_all\";s:2:\"5%\";s:15:\"level_money_all\";s:2:\"1%\";s:18:\"level_register_all\";i:2;s:17:\"level_register_up\";i:60;}s:4:\"item\";a:4:{i:0;a:2:{s:11:\"level_point\";s:3:\"60%\";s:11:\"level_money\";s:3:\"60%\";}i:1;a:2:{s:11:\"level_point\";s:3:\"30%\";s:11:\"level_money\";s:3:\"30%\";}i:2;a:2:{s:11:\"level_point\";s:2:\"7%\";s:11:\"level_money\";s:2:\"7%\";}i:3;a:2:{s:11:\"level_point\";s:2:\"3%\";s:11:\"level_money\";s:2:\"3%\";}}s:2:\"on\";i:1;}', '1');
-INSERT INTO `ecs_shop_config` VALUES ('617', '6', 'captcha', 'hidden', '', '', '12', '1');
+INSERT INTO `ecs_shop_config` VALUES ('617', '6', 'captcha', 'hidden', '', '', '16', '1');
 INSERT INTO `ecs_shop_config` VALUES ('618', '6', 'captcha_width', 'hidden', '', '', '100', '1');
 INSERT INTO `ecs_shop_config` VALUES ('619', '6', 'captcha_height', 'hidden', '', '', '20', '1');
 INSERT INTO `ecs_shop_config` VALUES ('620', '6', 'sitemap', 'hidden', '', '', 'a:6:{s:19:\"homepage_changefreq\";s:6:\"hourly\";s:17:\"homepage_priority\";s:3:\"0.9\";s:19:\"category_changefreq\";s:6:\"hourly\";s:17:\"category_priority\";s:3:\"0.8\";s:18:\"content_changefreq\";s:6:\"weekly\";s:16:\"content_priority\";s:3:\"0.7\";}', '0');
@@ -6615,6 +6627,7 @@ INSERT INTO `ecs_stats` VALUES ('1245217308', '0.0.0.0', '498', 'FireFox 3.0.11'
 INSERT INTO `ecs_stats` VALUES ('1245219380', '0.0.0.0', '499', 'FireFox 3.0.11', 'Windows XP', 'zh-cn', 'IANA', 'http://localhost:8080', '/shouji/admin/index.php?act=top', '/shouji/index.php');
 INSERT INTO `ecs_stats` VALUES ('1245222219', '0.0.0.0', '500', 'FireFox 3.0.11', 'Windows XP', 'zh-cn', 'IANA', 'http://localhost:8080', '/shouji/admin/goods.php?act=list', '/shouji/goods.php');
 INSERT INTO `ecs_stats` VALUES ('1457634268', '127.0.0.1', '3', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', 'http://market.com', '/admin/index.php?act=top', '/index.php');
+INSERT INTO `ecs_stats` VALUES ('1457635472', '127.0.0.1', '4', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
 
 -- ----------------------------
 -- Table structure for ecs_suppliers
@@ -6703,6 +6716,43 @@ INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/pages.l
 INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/cart.lbi', '0', '0', '0', '0', 'default', '');
 INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/price_grade.lbi', '3', '0', '0', '0', 'default', '');
 INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/filter_attr.lbi', '2', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/vote_list.lbi', '8', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/email_list.lbi', '9', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/order_query.lbi', '6', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/cart.lbi', '0', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/promotion_info.lbi', '3', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/auction.lbi', '4', '0', '3', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/group_buy.lbi', '5', '0', '3', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '', '/library/recommend_promotion.lbi', '0', '0', '4', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '右边主区域', '/library/recommend_hot.lbi', '2', '0', '10', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '右边主区域', '/library/recommend_new.lbi', '1', '0', '10', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '右边主区域', '/library/recommend_best.lbi', '0', '0', '10', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/invoice_query.lbi', '7', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/top10.lbi', '2', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '左边区域', '/library/category_tree.lbi', '1', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '', '/library/brands.lbi', '0', '0', '11', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/category_tree.lbi', '1', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/recommend_best.lbi', '0', '0', '5', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/goods_list.lbi', '1', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/pages.lbi', '2', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/cart.lbi', '0', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/price_grade.lbi', '3', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/filter_attr.lbi', '2', '0', '0', '0', 'default', '');
+INSERT INTO `ecs_template` VALUES ('index', '全宽行', '/library/recommend_best.lbi', '2', '0', '5', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '', '/library/brands.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/pages.lbi', '1', '0', '0', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '', '/library/recommend_promotion.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '右边区域', '/library/goods_list.lbi', '0', '0', '0', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '', '/library/recommend_hot.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '', '/library/recommend_best.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/history.lbi', '0', '0', '0', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('category', '左边区域', '/library/category_tree.lbi', '0', '0', '0', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '全宽行', '/library/recommend_new.lbi', '0', '0', '5', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '全宽行', '/library/recommend_hot.lbi', '1', '0', '5', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '促销商品区域', '/library/recommend_promotion.lbi', '0', '0', '4', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '', '/library/group_buy.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '', '/library/auction.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
+INSERT INTO `ecs_template` VALUES ('index', '', '/library/brands.lbi', '0', '0', '3', '0', 'mbyunchaoshi2015', '');
 
 -- ----------------------------
 -- Table structure for ecs_topic
@@ -6775,7 +6825,7 @@ CREATE TABLE `ecs_users` (
   KEY `email` (`email`),
   KEY `parent_id` (`parent_id`),
   KEY `flag` (`flag`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_users
@@ -6784,6 +6834,7 @@ INSERT INTO `ecs_users` VALUES ('1', 'ecshop@ecshop.com', 'ecshop', '554fcae493e
 INSERT INTO `ecs_users` VALUES ('2', 'vip@ecshop.com', 'vip', '232059cb5361a9336ccf1b8c2ba7657a', '', '', '0', '1949-01-01', '0.00', '0.00', '0', '0', '0', '0', '0', '0000-00-00 00:00:00', '', '0', '0', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
 INSERT INTO `ecs_users` VALUES ('3', 'text@ecshop.com', 'text', '1cb251ec0d568de6a929b520c4aed8d1', '', '', '0', '1949-01-01', '0.00', '0.00', '0', '0', '2', '0', '1242973574', '0000-00-00 00:00:00', '0.0.0.0', '2', '0', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
 INSERT INTO `ecs_users` VALUES ('5', 'zuanshi@ecshop.com', 'zuanshi', '815a71fb334412e7ba4595741c5a111d', '', '', '0', '1949-01-01', '0.00', '10000.00', '0', '0', '0', '0', '0', '0000-00-00 00:00:00', '', '0', '3', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
+INSERT INTO `ecs_users` VALUES ('6', '475647150@qq.com', 'cjjmem', 'e10adc3949ba59abbe56e057f20f883e', '', '', '0', '2016-03-16', '0.00', '0.00', '0', '0', '3', '1457637342', '1457637342', '2016-03-23 11:31:43', '127.0.0.1', '1', '0', '0', null, '0', '0', '0', '', '', '475647150', '', '', '13611460986', '0', '0.00', 'friend_birthday', '10');
 
 -- ----------------------------
 -- Table structure for ecs_user_account
@@ -6832,13 +6883,14 @@ CREATE TABLE `ecs_user_address` (
   `best_time` varchar(120) NOT NULL DEFAULT '',
   PRIMARY KEY (`address_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_user_address
 -- ----------------------------
 INSERT INTO `ecs_user_address` VALUES ('1', '', '1', '刘先生', 'ecshop@ecshop.com', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', '', '');
 INSERT INTO `ecs_user_address` VALUES ('2', '', '3', '叶先生', 'text@ecshop.com', '1', '2', '52', '510', '通州区旗舰凯旋小区', '', '13588104710', '', '', '');
+INSERT INTO `ecs_user_address` VALUES ('3', '', '6', 'chenjunjia', '7', '1', '10', '141', '1143', 'a', 'a', 'a', '', '', '');
 
 -- ----------------------------
 -- Table structure for ecs_user_bonus

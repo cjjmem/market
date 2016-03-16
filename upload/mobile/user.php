@@ -26,6 +26,7 @@ if ($act == 'do_login')
 {
     $user_name = !empty($_POST['username']) ? $_POST['username'] : '';
     $pwd = !empty($_POST['pwd']) ? $_POST['pwd'] : '';
+
     if (empty($user_name) || empty($pwd))
     {
         $login_faild = 1;
@@ -44,8 +45,8 @@ if ($act == 'do_login')
             $login_faild = 1;
         }
     }
-}
 
+}
 elseif ($act == 'order_list')
 {
     $record_count = $db->getOne("SELECT COUNT(*) FROM " .$ecs->table('order_info'). " WHERE user_id = {$_SESSION['user_id']}");
