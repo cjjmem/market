@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b3f0ac4-b17e-41da-8bec-f5e2db806c20" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/mobile/templates/category.html" afterPath="$PROJECT_DIR$/upload/mobile/templates/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/mobile/category.php" afterPath="$PROJECT_DIR$/upload/mobile/category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/mobile/templates/goods.html" afterPath="$PROJECT_DIR$/upload/mobile/templates/goods.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/mobile/templates/search.html" afterPath="$PROJECT_DIR$/upload/mobile/templates/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/mobile/search.php" afterPath="$PROJECT_DIR$/upload/mobile/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/实超页面.txt" afterPath="$PROJECT_DIR$/实超页面.txt" />
-    </list>
+    <list default="true" id="1b3f0ac4-b17e-41da-8bec-f5e2db806c20" name="默认的" comment="" />
     <ignored path="market.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -63,8 +55,8 @@
       <file leaf-file-name="buy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/upload/mobile/templates/buy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8769231" vertical-offset="1130" max-vertical-offset="2020">
-              <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.6" vertical-offset="1130" max-vertical-offset="2020">
+              <caret line="76" column="7" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -1006,8 +998,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/upload/mobile/templates/buy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8769231" vertical-offset="1130" max-vertical-offset="2020">
-          <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.6" vertical-offset="1130" max-vertical-offset="2020">
+          <caret line="76" column="7" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
           <folding />
         </state>
       </provider>
