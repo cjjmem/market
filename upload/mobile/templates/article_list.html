@@ -1,25 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ECShop_mobile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="m.178hui.com" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>信息列表</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css" />
+    <link href="css/frozenui/css/frozen.css" rel="stylesheet" type="text/css" />
+    <link href="css/news.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $("#status").fadeOut();
+            $("#preloader").delay(350).fadeOut("slow");
+        })
+    </script>
 </head>
 
 <body>
-<p align='left'>
-站内新闻<br/>
---------------<br/>
-{foreach from=$article_array item=article_data}
-    {$article_data.i}.<a href='article.php?act=detail&amp;a_id={$article_data.id}'>{$article_data.title}</a><br/>
-    发表时间:{$article_data.add_time}<br/>
-{/foreach}
-{if $pagebar}
-    {$pagebar}<br/>
-{/if}
---------------<br/>
-<a href="javascript:history.back(-1)">回上一页</a><br/>
-<a href='index.php'>返回首页</a>
-{$footer}
-</p>
+<div class="mobile">
+    <!--页面加载 开始-->
+    <div id="preloader">
+        <div id="status">
+            <p class="center-text"><span>拼命加载中···</span></p>
+        </div>
+    </div>
+    <!--页面加载 结束-->
+    <!--header 开始-->
+    <header>
+        <div class="header"> <a class="new-a-back" href="javascript:history.back();"> <span><img src="images/iconfont-fanhui.png"></span> </a>
+            <h2>信息</h2>
+            <div class="head_right"><a href="news_index.html" style="color:#FFFFFF; font-size:14px;">返回资讯</a></div>
+        </div>
+    </header>
+    <!--header 结束-->
+    <div class="search w">
+        <form action="" method="get">
+            <input name="" type="text" class="search_input" placeholder="请输入关键字"><input name="" type="button" class="search_submit" value="搜索">
+        </form>
+    </div>
+    <div class="news_index w">
+        <ul class="ui-list ui-list-text ui-border-tb">
+            {foreach from=$article_array item=article_data}
+                <a href="article.php?act=detail&amp;a_id={$article_data.id}">
+                    <li class="ui-border-t list">
+                        <div class="ui-list-info">
+                            <h4>{$article_data.title}</h4>
+                        </div>
+                        <div class="ui-badge-muted">123</div>
+                    </li>
+                </a>
+            {/foreach}
+
+
+
+        </ul>
+        {if $pagebar}
+            {$pagebar}<br/>
+        {/if}
+    </div>
+
+    <div class="m_user w">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+        <a href="#">返回顶部</a>
+    </div>
+    <div class="footer w">
+        <a href="#"><div class="ico_img"><img src="images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
+        <a href="index.html"><div class="ico_img"><img src="images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
+        <a href="#"><div class="ico_img"><img src="images/178hui-diannao.png"></div><span>电脑版</span></a>
+    </div>
+    <div class="copyright">Copyright © 2012-2015 一起惠返利网 m.178hui.com 版权所有</div>
+</div>
 </body>
 </html>

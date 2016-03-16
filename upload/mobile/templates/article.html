@@ -1,23 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ECShop_mobile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="m.178hui.com" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>{if $article_data}{$article_data.title}{else}详情{/if}</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css" />
+    <link href="css/news.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $("#status").fadeOut();
+            $("#preloader").delay(350).fadeOut("slow");
+        })
+    </script>
 </head>
 
 <body>
-<p align='left'>
-{if $article_data}
-    {$article_data.title}<br/>
-    --------------<br/>
-    {$article_data.content}<br/>
-{else}
-    错误地址<br/>
-{/if}
---------------<br/>
-<a href="javascript:history.back(-1)">回上一页</a><br/>
-<a href='index.php'>返回首页</a>
-{$footer}
-</p>
+<div class="mobile">
+    <!--页面加载 开始-->
+    <div id="preloader">
+        <div id="status">
+            <p class="center-text"><span>拼命加载中···</span></p>
+        </div>
+    </div>
+    <!--页面加载 结束-->
+    <!--header 开始-->
+    <header>
+        <div class="header"> <a class="new-a-back" href="javascript:history.back();"> <span><img src="images/iconfont-fanhui.png"></span> </a>
+            <h2>详情</h2>
+            <div class="head_right"><a href="article.php" style="color:#FFFFFF; font-size:14px;">返回列表</a></div>
+        </div>
+    </header>
+    <!--header 结束-->
+    <div class="news_view w">
+        <h1>{$article_data.title}</h1>
+        <div class="news_tags"><span>时间：{$article_data.add_time}</span><span>作者：{$article_data.author}</span><span>浏览：168次</span></div>
+        <div class="news_content">
+            {$article_data.content}
+        </div>
+        <div class="news_key"><span>标签：</span><a href="#">实超</a></div>
+        <div class="news_more">
+            <div class="news_next"><span>上一篇：</span><a href="#">淘宝重审卖家延迟发货 或将修订新规？</a></div>
+            <div class="news_next"><span>下一篇：</span><a href="#">聚美优品可以返利吗</a></div>
+        </div>
+    </div>
+
+    <div class="m_user w">
+        {if $smarty.session.user_id eq 0}
+            <a href="user.php?act=login">登录</a>
+            {else}
+            <a href="user.php?act=login">个人中心</a>
+        {/if}
+        <a href="user.php?act=register">注册</a>
+        <a href="#">返回顶部</a>
+    </div>
+    <!--<div class="footer w">
+        <a href="#"><div class="ico_img"><img src="images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
+        <a href="index.html"><div class="ico_img"><img src="images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
+        <a href="#"><div class="ico_img"><img src="images/178hui-diannao.png"></div><span>电脑版</span></a>
+    </div>-->
+    <div class="copyright">Copyright © 2016 行院实超</div>
+</div>
 </body>
 </html>

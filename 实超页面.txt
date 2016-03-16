@@ -14,11 +14,20 @@ http://market.com/mobile/user.php?act=register
 http://market.com/mobile/category.php
 商品列表页(in do)
 http://market.com/mobile/category.php?c_id=13
-文章页
+
+文章列表页
+http://market.com/mobile/article.php
+文章详情页
 http://market.com/mobile/article.php?act=detail&a_id=31
 
 品牌页
 http://market.com/mobile/brands.php
+
+我的订单
+http://market.com/mobile/user.php?act=order_list
+
+结算页面
+http://market.com/mobile/order.php?act=order_lise
 
 购物车页面
 http://market.com/mobile/buy.php?act=checkout
