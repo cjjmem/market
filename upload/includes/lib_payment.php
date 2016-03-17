@@ -108,10 +108,16 @@ function get_goods_name_by_id($order_id)
  */
 function check_money($log_id, $money)
 {
-    $sql = 'SELECT order_amount FROM ' . $GLOBALS['ecs']->table('pay_log') .
+    if(is_numeric($log_id))
+    {
+        $sql = 'SELECT order_amount FROM ' . $GLOBALS['ecs']->table('pay_log') .
               " WHERE log_id = '$log_id'";
-    $amount = $GLOBALS['db']->getOne($sql);
-
+        $amount = $GLOBALS['db']->getOne($sql);
+    }
+    else
+    {
+        return false;
+    }
     if ($money == $amount)
     {
         return true;

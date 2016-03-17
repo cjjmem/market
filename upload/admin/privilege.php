@@ -67,7 +67,7 @@ if ($_REQUEST['act'] == 'login')
 /*------------------------------------------------------ */
 elseif ($_REQUEST['act'] == 'signin')
 {
-    if (!empty($_SESSION['captcha_word']) && (intval($_CFG['captcha']) & CAPTCHA_ADMIN))
+    if (intval($_CFG['captcha']) & CAPTCHA_ADMIN)
     {
         include_once(ROOT_PATH . 'includes/cls_captcha.php');
 
@@ -205,15 +205,18 @@ elseif ($_REQUEST['act'] == 'add')
 elseif ($_REQUEST['act'] == 'insert')
 {
     admin_priv('admin_manage');
-
+    if($_POST['token']!=$_CFG['token'])
+    {
+         sys_msg('add_error', 1);
+    }
     /* 判断管理员是否已经存在 */
     if (!empty($_POST['user_name']))
     {
-        $is_only = $exc->is_only('user_name', stripslashes($_POST['user_name']));
+        $is_only = $exc->is_only('user_name', $_POST['user_name']);
 
         if (!$is_only)
         {
-            sys_msg(sprintf($_LANG['user_name_exist'], stripslashes($_POST['user_name'])), 1);
+            sys_msg(sprintf($_LANG['user_name_exist'], $_POST['user_name']), 1);
         }
     }
 
@@ -331,6 +334,10 @@ elseif ($_REQUEST['act'] == 'update' || $_REQUEST['act'] == 'update_self')
     $admin_email = !empty($_REQUEST['email'])     ? trim($_REQUEST['email'])     : '';
     $ec_salt=rand(1,9999);
     $password = !empty($_POST['new_password']) ? ", password = '".md5(md5($_POST['new_password']).$ec_salt)."'"    : '';
+    if($_POST['token']!=$_CFG['token'])
+    {
+         sys_msg('update_error', 1);
+    }
     if ($_REQUEST['act'] == 'update')
     {
         /* 查看是否有权限编辑其他管理员的信息 */
@@ -624,7 +631,10 @@ elseif ($_REQUEST['act'] == 'allot')
 elseif ($_REQUEST['act'] == 'update_allot')
 {
     admin_priv('admin_manage');
-
+    if($_POST['token']!=$_CFG['token'])
+    {
+         sys_msg('update_allot_error', 1);
+    }
     /* 取得当前管理员用户名 */
     $admin_name = $db->getOne("SELECT user_name FROM " .$ecs->table('admin_user'). " WHERE user_id = '$_POST[id]'");
 

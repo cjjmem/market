@@ -26,7 +26,6 @@ if ($act == 'do_login')
 {
     $user_name = !empty($_POST['username']) ? $_POST['username'] : '';
     $pwd = !empty($_POST['pwd']) ? $_POST['pwd'] : '';
-
     if (empty($user_name) || empty($pwd))
     {
         $login_faild = 1;
@@ -45,8 +44,8 @@ if ($act == 'do_login')
             $login_faild = 1;
         }
     }
-
 }
+
 elseif ($act == 'order_list')
 {
     $record_count = $db->getOne("SELECT COUNT(*) FROM " .$ecs->table('order_info'). " WHERE user_id = {$_SESSION['user_id']}");
@@ -285,11 +284,25 @@ function m_register($username, $password, $email, $other = array())
         ecs_header("Location: $Loaction\n");
         return false;
     }
+    if (preg_match('/\'\/^\\s*$|^c:\\\\con\\\\con$|[%,\\*\\"\\s\\t\\<\\>\\&\'\\\\]/', $username))
+    {
+        echo '用户名错误';
+        $Loaction = 'user.php?act=register';
+        ecs_header("Location: $Loaction\n");
+        return false;
+    }
 
     /* 检查email */
     if (empty($email))
     {
-        echo 'emial不能为空';
+        echo 'email不能为空';
+        $Loaction = 'user.php?act=register';
+        ecs_header("Location: $Loaction\n");
+        return false;
+    }
+    if(!is_email($email))
+    {
+        echo 'email错误';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
