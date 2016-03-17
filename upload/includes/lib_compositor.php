@@ -16,16 +16,7 @@
 if(isset($modules))
 {
 
-    foreach ($modules as $k =>$v)
-    {
-        if($v['pay_code'] == 'epay')
-        {
-            $tenpay = $modules[$k];
-            unset($modules[$k]);
-            array_unshift($modules, $tenpay);
-        }
-    }
-
+    /* 将财付通提升至第二个显示 */
     foreach ($modules as $k =>$v)
     {
         if($v['pay_code'] == 'tenpay')
@@ -35,10 +26,10 @@ if(isset($modules))
             array_unshift($modules, $tenpay);
         }
     }
-
+    /* 将快钱直连银行显示在快钱之后 */
     foreach ($modules as $k =>$v)
     {
-        if($v['pay_code'] == 'syl')
+        if(strpos($v['pay_code'], 'kuaiqian')!== false)
         {
             $tenpay = $modules[$k];
             unset($modules[$k]);
@@ -46,16 +37,16 @@ if(isset($modules))
         }
     }
 
+    /* 将快钱提升至第一个显示 */
     foreach ($modules as $k =>$v)
     {
-        if($v['pay_code'] == 'alipay')
+        if($v['pay_code'] == 'kuaiqian')
         {
             $tenpay = $modules[$k];
             unset($modules[$k]);
             array_unshift($modules, $tenpay);
         }
     }
-
 
 }
 

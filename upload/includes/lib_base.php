@@ -342,7 +342,6 @@ function send_mail($name, $email, $subject, $content, $type = 0, $notification=f
 function gd_version()
 {
     include_once(ROOT_PATH . 'includes/cls_image.php');
-
     return cls_image::gd_version();
 }
 

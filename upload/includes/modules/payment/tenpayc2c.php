@@ -68,22 +68,6 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class tenpayc2c
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-    function tenpayc2c()
-    {
-    }
-
-    function __construct()
-    {
-        $this->tenpayc2c();
-    }
 
     /**
      * 生成支付代码

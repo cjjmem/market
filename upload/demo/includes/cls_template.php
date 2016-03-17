@@ -39,18 +39,6 @@ class template
      * @param   string       $path
      * @return  void
      */
-    function __construct($path)
-    {
-        $this->template($path);
-    }
-
-    /**
-     * 鏋勯€犲嚱鏁
-     *
-     * @access  public
-     * @param   string       $path
-     * @return  void
-     */
     function template($path)
     {
         $this->path = $path;

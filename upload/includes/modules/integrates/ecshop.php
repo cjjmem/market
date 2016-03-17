@@ -46,11 +46,6 @@ class ecshop extends integrate
 {
     var $is_ecshop = 1;
 
-    function __construct($cfg)
-    {
-        $this->ecshop($cfg);
-    }
-
     /**
      *
      *

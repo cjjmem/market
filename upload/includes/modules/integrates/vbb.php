@@ -52,11 +52,6 @@ class vbb extends integrate
 {
     var $cookie_salt = '';
 
-    function __construct($cfg)
-    {
-        $this->vbb($cfg);
-    }
-
     /**
      *
      *

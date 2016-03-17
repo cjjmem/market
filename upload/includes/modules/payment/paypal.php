@@ -67,22 +67,6 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class paypal
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-    function paypal()
-    {
-    }
-
-    function __construct()
-    {
-        $this->paypal();
-    }
 
     /**
      * 生成支付代码

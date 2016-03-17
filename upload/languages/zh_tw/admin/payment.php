@@ -44,10 +44,4 @@ $_LANG['ctenpay_url']       = 'http://union.tenpay.com/mch/mch_register_b2c.shtm
 $_LANG['ctenpayc2c_url']    = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
 $_LANG['tenpay']  = '即時到賬';
 $_LANG['tenpayc2c'] = '中介擔保';
-
-$_LANG['dualpay'] = '使用標準雙接口';
-$_LANG['escrow'] = '使用擔保交易接口';
-$_LANG['fastpay'] = '使用即時到帳交易接口';
-$_LANG['alipay_pay_method'] = '選擇接口類型：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-$_LANG['getPid'] = '穫取 Pid、Key';
 ?>

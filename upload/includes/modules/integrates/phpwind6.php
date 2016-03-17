@@ -53,10 +53,6 @@ class phpwind6 extends integrate
     var $db_hash = '';
     var $db_sitehash = '';
 
-    function __construct($cfg)
-    {
-        $this->phpwind6($cfg);
-    }
 
     /**
      *  插件类初始化函数

@@ -46,10 +46,4 @@ $_LANG['ctenpay_url']       = 'http://union.tenpay.com/mch/mch_register_b2c.shtm
 $_LANG['ctenpayc2c_url']    = 'https://www.tenpay.com/mchhelper/mch_register_c2c.shtml?sp_suggestuser=542554970';
 $_LANG['tenpay']  = 'tenpay';
 $_LANG['tenpayc2c'] = 'Intermediary security';
-
-$_LANG['dualpay'] = 'Standard dual-interface';
-$_LANG['escrow'] = 'Secured transactions interface';
-$_LANG['fastpay'] = 'Real-time interface transactions arrive';
-$_LANG['alipay_pay_method'] = 'Choose interface type：';
-$_LANG['getPid'] = 'Get Pid、Key';
 ?>

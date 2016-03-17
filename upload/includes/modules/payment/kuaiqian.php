@@ -67,23 +67,7 @@ if (isset($set_modules) && $set_modules == true)
 
 class kuaiqian
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-
-    function kuaiqian()
-    {
-    }
-
-    function __construct()
-    {
-        $this->kuaiqian();
-    }
+  
 
    /**
      * 生成支付代码
