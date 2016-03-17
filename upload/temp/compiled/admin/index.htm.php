@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php echo $this->_var['lang']['cp_home']; ?></title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="Text/Javascript" language="JavaScript">
-<!--
+
+<script type="text/Javascript">
 
 if (window.top != window)
 {
   window.top.location.href = document.location.href;
 }
 
-//-->
+
 </script>
 
 <frameset rows="76,*" framespacing="0" border="0">

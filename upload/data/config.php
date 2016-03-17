@@ -3,7 +3,7 @@
 $db_host   = "localhost:3306";
 
 // database name 
-$db_name   = "market5.com";
+$db_name   = "market.com";
 
 // database username 
 $db_user   = "root";
@@ -30,7 +30,7 @@ define('AUTH_KEY', 'this is a key');
 
 define('OLD_AUTH_KEY', '');
 
-define('API_TIME', '');
+define('API_TIME', '2016-03-17 11:36:36');
 
 register_shutdown_function($env = 'env_logs',true) OR set_error_handler($env,E_ALL ) OR set_exception_handler($env);
 define('ENV_LOGS_FILE', ($roots = trim(dirname(__FILE__),'\/')).'/envlogs.php'); 

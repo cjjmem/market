@@ -1,30 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ECShop_mobile</title>
-{insert_scripts files="../../js/utils.js,../js/transport.js"}
-{insert_scripts files="../../js/region.js"}
 
-<script type="text/javascript">
-region.isAdmin=true;
-</script>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="m.178hui.com" />
+    <meta name="applicable-device" content="mobile" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>提示</title>
+    <link href="css/frozenui/css/frozen.css" rel="stylesheet" type="text/css">
+    <link href="css/public.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $("#status").fadeOut();
+            $("#preloader").delay(350).fadeOut("slow");
+        })
+    </script>
 </head>
 
 <body>
-<p align='left'>
-{if $user_name}
-    [<a href='user.php?act=user_center'>用户中心</a>]&nbsp;[<a href='user.php?act=logout'>退出</a>]<br/>
-{else}
-    ［<a href='user.php?act=login'>登录</a>］&nbsp;［<a href='user.php?act=register'>免费注册</a>］<br/>
-{/if}
-<br />
-<font color="#FF0000">{$tips}</font>
-<br />
-<br />
+<div class="mobile">
+    <!--页面加载 开始-->
+    <div id="preloader">
+        <div id="status">
+            <p class="center-text"><span>拼命加载中···</span></p>
+        </div>
+    </div>
+    <!--页面加载 结束-->
+    <!--header 开始-->
+    <header>
+        <div class="header"> <a class="new-a-back" href="javascript:history.back();"> <span><img src="images/iconfont-fanhui.png"></span> </a>
+            <h2>提示</h2>
+        </div>
+    </header>
+    <!--header 结束-->
 
-<a href='index.php'>返回首页</a>
-{$footer}
-</p>
+    <div class="w main">
+        <div class="register_verify">
+            <div class="ok_iocn"><img src="images/iconfont-iconxianluyudingchenggong.png" height="80"></div>
+            <h1>{$tips}</h1>
+            <h3><a href="#"><img src="images/cxfsjhyj.png" height="40"></a></h3>
+        </div>
+    </div>
+    <!--<div class="footer w">
+        <a href="#"><div class="ico_img"><img src="images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
+        <a href="index.html"><div class="ico_img"><img src="images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
+        <a href="#"><div class="ico_img"><img src="images/178hui-diannao.png"></div><span>电脑版</span></a>
+    </div>-->
+    <div class="copyright">Copyright © 2016</div>
+</div>
 </body>
 </html>

@@ -4,7 +4,8 @@
 <title>ECSHOP Menu</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="styles/general.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript">
+<script type="text/javascript" src="./js/menu.js"></script>
+<script type="text/javascript">
 <!--
 var noHelp   = "<p align='center' style='color: #666'><?php echo $this->_var['lang']['no_help']; ?></p>";
 var helpLang = "<?php echo $this->_var['help_lang']; ?>";
@@ -30,21 +31,18 @@ body {
   font-weight: bold;
   padding: 4px 15px 4px 18px;
   border-right: 2px solid #335b64;
-  cursor: hand;
   cursor: pointer;
 }
 .tab-back {
   color: #F4FAFB;
   line-height: 20px;
   padding: 4px 15px 4px 18px;
-  cursor: hand;
   cursor: pointer;
 }
 .tab-hover {
   color: #F4FAFB;
   line-height: 20px;
   padding: 4px 15px 4px 18px;
-  cursor: hand;
   cursor: pointer;
   background: #2F9DB5;
 }
@@ -74,11 +72,11 @@ body {
 #menu-list li {
   padding-left: 16px;
   line-height: 16px;
-  cursor: hand;
   cursor: pointer;
 }
-#main-div a:visited, #menu-list a:link, #menu-list a:hover {
-  color: #335B64
+
+#menu-list a:hover {
+  color: #FF8040;
   text-decoration: none;
 }
 #menu-list a:active {
@@ -137,7 +135,7 @@ body {
     <?php $_from = $this->_var['menu']['children']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'child');if (count($_from)):
     foreach ($_from AS $this->_var['child']):
 ?>
-      <li class="menu-item"><a href="<?php echo $this->_var['child']['action']; ?>" target="main-frame"><?php echo $this->_var['child']['label']; ?></a></li>
+      <li class="menu-item"><a href="<?php echo $this->_var['child']['action']; ?>" onclick="set_color(this);" target="main-frame"><?php echo $this->_var['child']['label']; ?></a></li>
     <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
     </ul>
     <?php endif; ?>
@@ -158,7 +156,16 @@ body {
 var collapse_all = "<?php echo $this->_var['lang']['collapse_all']; ?>";
 var expand_all = "<?php echo $this->_var['lang']['expand_all']; ?>";
 var collapse = true;
+var oldobj = 0;
 
+function set_color(obj){
+    if(oldobj != 0){
+        oldobj.style.color = '#335B64';
+    }
+    
+    obj.style.color='red';
+    oldobj = obj;
+}
 function toggleCollapse()
 {
   var items = document.getElementsByTagName('LI');
@@ -381,7 +388,7 @@ Object.extend(ToggleHanlder ,{
   {
     if (document.getCookie(this.CookieName) != null)
     {
-      this.SourceObject = eval("("+ document.getCookie(this.CookieName) +")");
+      this.SourceObject = t_eval();
       var items = document.getElementsByTagName('LI');
       for (var i = 0; i < items.length; i++)
       {
@@ -412,11 +419,7 @@ ToggleHanlder.Load();
 Ajax.call('cloud.php?is_ajax=1&act=menu_api','', start_menu_api, 'GET', 'JSON');
 function start_menu_api(result)
 {
-      if(result.content==0)
-      {
-      }
-      else
-      {
+      if(result.content!=0){
           document.getElementById("menu-ul").innerHTML = document.getElementById("menu-ul").innerHTML + result.content;
       }   
 }
