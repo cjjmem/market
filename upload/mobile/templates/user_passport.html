@@ -34,7 +34,7 @@
     <!--header 结束-->
 
     <div class="w main">
-        <form id="frm_login" method="post" action="">
+        <form id="frm_login" method="post" action="user.php?act=act_register">
             <div class="item item-username">
                 <input id="username" class="txt-input txt-username" type="text" placeholder="请输入用户名" value="" name="username">
                 <b class="input-close" style="display: none;"></b> </div>
@@ -47,25 +47,29 @@
                 <input id="ptext_PwdTwo" class="txt-input txt-password_PwdTwo plaintext_PwdTwo" type="text" placeholder="确认密码" style="display: none;" name="ptext_PwdTwo">
                 <b class="tp-btn_PwdTwo btn-off_PwdTwo"></b> </div>
             <div class="item item-username">
-                <input id="username" class="txt-input txt-username" type="text" placeholder="请输入邮箱" value="" name="username">
+                <input id="email" class="txt-input txt-username" type="text" placeholder="请输入邮箱" value="" name="email">
                 <b class="input-close" style="display:none;"></b> </div>
             <div class="item item-username">
-                <input id="username" class="txt-input txt-username" type="text" placeholder="请输入QQ号码" value="" name="username">
-                <b class="input-close" style="display:none;"></b> </div>
+                <input id="qq" class="txt-input txt-username" type="text" placeholder="请输入QQ号码" value="" name="qq">
+                <b class="input-close" style="display:none;"></b> 
+            </div>
+             <div class="item item-username">
+             	<lable><?php echo $_GET['tips'];?></lable>
+             </div>
             <div class="item item-captcha">
-                <div class="input-info">
+                <div class="input-info" style="display:none;">
                     <input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
                     <b id="validateCodeclose" class="input-close" onClick="validateCodeclose();" style="display: block; margin-right:15px;"></b> <span id="captcha-img"> <img id="code" src="images/code.jpg" style="width:63px;height:25px;" onClick="closeAndFlush();"> </span> </div>
                 <div class="err-tips"> 注册即视为同意 <a target="_blank" href="#">用户服务协议</a> </div>
             </div>
-            <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-primary" href="#">用户注册</a> </div>
+            <div class="ui-btn-wrap"> <button class="ui-btn-lg ui-btn-primary" style="border:0;" type="submit">用户注册</button> </div>
             <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-danger" href="user.php?act=login">已有账号？立即登录</a> </div>
         </form>
     </div>
 
     <div class="m_user w">
-        <a href="login.html">登录</a>
-        <a href="register.html">注册</a>
+         <a href="user.php?act=login">登录</a>
+        <a href="user.php?act=register">注册</a>
         <a href="#">返回顶部</a>
     </div>
     <!--<div class="footer w">
