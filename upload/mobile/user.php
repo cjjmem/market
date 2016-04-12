@@ -50,6 +50,9 @@ if ($act == 'do_login')
             $smarty->display('login.html');
         }
     }
+    $smarty->assign('footer', get_footer());
+    $smarty->display('login.html');
+
 }
 
 elseif ($act == 'order_list')
@@ -253,6 +256,7 @@ elseif ($act == 'act_register')
 /* 用户中心 */
 else
 {
+
     if ($_SESSION['user_id'] > 0)
     {
         show_user_center();

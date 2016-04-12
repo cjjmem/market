@@ -63,9 +63,9 @@
 品牌专区&gt;&gt;<a href='brands.php'>更多</a><br/>
 {foreach from=$brand_array item=brand_data}
 <a href='brands.php?b_id={$brand_data.brand_id}'>{$brand_data.brand_name}</a><br/>
-
+{/foreach}
 {/if}
-<br/>--------------<br/>{/foreach}
+<br/>--------------<br/>
 [站内资讯]&gt;&gt;<a href='article.php'>更多</a><br/>
 {if $article_array}
 {foreach from=$article_array item=article_data}

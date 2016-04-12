@@ -133,7 +133,7 @@
             <ul class="new-category-lst">
                 {foreach from=$cat_array key=k item=cat_data}
                     <li class="new-category-li">
-                        <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span><span onclick="location.href='category.php?c_id={$ccat_data.id}' ">{$cat_data.name}</span></a>
+                        <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span><span onclick="location.href='category.php?c_id={$cat_data.id}' ">{$cat_data.name}</span></a>
                         <ul class="new-category2-lst" id="category{$k}" style="display:none">
                             {foreach from=$cat_data['cat_id']  item=ccat_data}
                                 <li class="new-category2-li" >
@@ -148,28 +148,62 @@
     </div>
 {else}
     <style>
-        .up{ background: url('images/touch2013/index/_40img1_1.png')}
+        .downimg{ background: url('images/icon_index_3_down.png') no-repeat center center; width: 20px; height: 20px; display: block; float: right; margin-top: 5px; margin-right: 10%;}
+        .upimg{ background: url('images/icon_index_3.png') no-repeat center center; width: 20px; height: 20px; display: block; float: right; margin-top: 5px; margin-right: 10%;}
+        .carg { width: 95%; margin: 5px auto; background: #e3e3e3; height: 30px; line-height: 30px; font-size: 12px; text-align: center; }
+        .carg .select{ width: 32%; margin: 0 0.6%; background: #c3c3c3; display: block; float: left; }
+        .subclass { width: 95%; margin: 5px auto; background: #e3e3e3; height: auto; padding: 10px 0;  }
+        .subclass .name{ background:#FFF; border-radius: 5px; padding: 2px 5px; margin-top: 3px; text-align: center; width: auto; height: 24px;  line-height: 24px; display: inline-block; margin-right:10px; float: left; margin-left: 5px; }
+        .goods { width: 95%; margin: 10px auto; }
+        .goods li{ height: 80px; width: 100%;  overflow: hidden;}
+        .goods .img{ height:auto; width:15%;  float: left;  }
+        .goods .content{ height:80px; width:73%; float: left;    margin-left: 5%;}
+        .goods .title{ font-size: 12px; color: #313131;  }
+        .goods .price{ font-size: 12px; color: #db1818;  }
+        .goods .intro{ font-size: 12px; color: #c7c7c7; line-height: 17px;  height: 36px; overflow: hidden; }
     </style>
-
-    <div class="new-ct">
-        <div class="new-category">
+    <div class="carg">
         {if $smarty.get.order_price}
-            <a href='category.php?c_id={$smarty.get.c_id}{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序<span ><img src="images/touch2013/index/_40img1_1.png"></span></a>
+            <a class="select" href='category.php?c_id={$smarty.get.c_id}{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序<span class="downimg" ></span></a>
         {else}
-            <a href='category.php?c_id={$smarty.get.c_id}&order_price=1{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序</a>
+            <a class="select" href='category.php?c_id={$smarty.get.c_id}&order_price=1{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序<span class="upimg" ></span></a>
         {/if}
+        <a class="select">时间排序<span class="upimg" ></span><a>
+        <a class="select">销量排序<span class="upimg" ></span><a>
     </div>
-{if $cat_children}
-下级分类<br/>
-    {foreach from=$cat_children item=child_data}
-    <a href='category.php?c_id={$child_data.id}'>{$child_data.name}</a><br/>
-    {/foreach}
-{/if}
-    {foreach from=$goods_data item=goods}
-        {$goods.i}.<a href='goods.php?id={$goods.id}'>{$goods.name}</a>[{$goods.price}]<br/>
-    {foreachelse}
-        暂无此类商品<br/>
-    {/foreach}<br/>
+
+
+        {if $cat_children}
+        <div class="new-ct">
+            <div class="subclass">
+                {foreach from=$cat_children item=child_data}
+                    <a class="name" href='category.php?c_id={$child_data.id}'>{$child_data.name}</a>
+                {/foreach}
+            <div style="clear: both"></div>
+         </div>
+        {/if}
+
+
+
+    <ul class="goods">
+        {foreach from=$goods_data item=goods}
+        <li id="gogods{$goods.i}">
+            <a href='goods.php?id={$goods.id}'>
+                <img class="img" src="{$goods.img}" />
+                <div class="content">
+                    <div class="title">{$goods.name} </div>
+                    <div class="price">价格:<span>￥{$goods.price}</span></div>
+                    <div class="intro">{$goods.brief}</div>
+                </div>
+            </a>
+        </li>
+
+        {foreachelse}
+             <li >暂无此类商品</li>
+        {/foreach}
+    </ul>
+
+
     {if $pagebar}
         {$pagebar}<br/>
     {/if}
