@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-03-11 11:32:38
+Date: 2016-03-18 15:49:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -766,7 +766,7 @@ CREATE TABLE `ecs_admin_user` (
 -- ----------------------------
 -- Records of ecs_admin_user
 -- ----------------------------
-INSERT INTO `ecs_admin_user` VALUES ('1', 'admin', '475647150@qq.com', '8badcc4dd035c54f8fc3ff6047daaeaf', '549', '1457634246', '1457635500', '127.0.0.1', 'all', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '0', null, null);
+INSERT INTO `ecs_admin_user` VALUES ('1', 'admin', '475647150@qq.com', '8badcc4dd035c54f8fc3ff6047daaeaf', '549', '1457634246', '1458151850', '127.0.0.1', 'all', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '0', null, null);
 INSERT INTO `ecs_admin_user` VALUES ('2', 'bjgonghuo1', 'bj@163.com', 'd0c015b6eb9a280f318a4c0510581e7e', null, '1245044099', '0', '', '', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '1', '', null);
 INSERT INTO `ecs_admin_user` VALUES ('3', 'shhaigonghuo1', 'shanghai@163.com', '4146fecce77907d264f6bd873f4ea27b', null, '1245044202', '0', '', '', '商品列表|goods.php?act=list,订单列表|order.php?act=list,用户评论|comment_manage.php?act=list,会员列表|users.php?act=list,商店设置|shop_config.php?act=list_edit', '', '0', '2', '', null);
 
@@ -1452,12 +1452,12 @@ CREATE TABLE `ecs_cart` (
   `goods_attr_id` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`rec_id`),
   KEY `session_id` (`session_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_cart
 -- ----------------------------
-INSERT INTO `ecs_cart` VALUES ('46', '6', 'e93e3abbdf79eb76fa66d59a1d4195ef', '19', 'ECS000019', '0', '三星SGH-F258', '1029.60', '858.00', '1', '', '1', '', '0', '0', '0', '0', '0', '');
+INSERT INTO `ecs_cart` VALUES ('55', '6', 'db31202e7e97db67367dc28e8d9b418a', '9', 'ECS000009', '0', '诺基亚E66', '2757.60', '2298.00', '1', '', '1', '', '0', '0', '0', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for ecs_category
@@ -1479,7 +1479,7 @@ CREATE TABLE `ecs_category` (
   `filter_attr` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`cat_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_category
@@ -1497,7 +1497,7 @@ INSERT INTO `ecs_category` VALUES ('11', '读卡器和内存卡', '', '', '6', '
 INSERT INTO `ecs_category` VALUES ('12', '充值卡', '', '', '0', '50', '', '', '0', '', '1', '0', '0');
 INSERT INTO `ecs_category` VALUES ('13', '小灵通/固话充值卡', '', '', '12', '50', '', '', '0', '', '1', '0', '0');
 INSERT INTO `ecs_category` VALUES ('14', '移动手机充值卡', '', '', '12', '50', '', '', '0', '', '1', '0', '0');
-INSERT INTO `ecs_category` VALUES ('15', '联通手机充值卡', '', '', '12', '50', '', '', '0', '', '1', '0', '0');
+INSERT INTO `ecs_category` VALUES ('16', '联通手机充值卡', '', '', '12', '50', '', '', '0', '', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for ecs_cat_recommend
@@ -2250,6 +2250,8 @@ INSERT INTO `ecs_keywords` VALUES ('2009-05-12', 'ecshop', '诺基亚', '1');
 INSERT INTO `ecs_keywords` VALUES ('2009-05-12', 'ecshop', '夏新', '1');
 INSERT INTO `ecs_keywords` VALUES ('2009-05-18', 'ecshop', '52', '2');
 INSERT INTO `ecs_keywords` VALUES ('2009-05-22', 'ecshop', 'p', '1');
+INSERT INTO `ecs_keywords` VALUES ('2016-03-11', 'ecshop', '66', '3');
+INSERT INTO `ecs_keywords` VALUES ('2016-03-16', 'ecshop', '小灵通', '4');
 
 -- ----------------------------
 -- Table structure for ecs_link_goods
@@ -2394,7 +2396,7 @@ CREATE TABLE `ecs_order_action` (
   `log_time` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`action_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_order_action
@@ -2426,6 +2428,7 @@ INSERT INTO `ecs_order_action` VALUES ('24', '16', 'admin', '1', '4', '2', '0', 
 INSERT INTO `ecs_order_action` VALUES ('25', '17', 'admin', '1', '1', '2', '0', '', '1245048189');
 INSERT INTO `ecs_order_action` VALUES ('26', '17', 'admin', '4', '0', '0', '0', '退货', '1245048212');
 INSERT INTO `ecs_order_action` VALUES ('27', '19', 'admin', '1', '1', '2', '0', '', '1245384050');
+INSERT INTO `ecs_order_action` VALUES ('28', '21', 'buyer', '2', '0', '0', '0', '用户取消', '1458157345');
 
 -- ----------------------------
 -- Table structure for ecs_order_goods
@@ -2451,7 +2454,7 @@ CREATE TABLE `ecs_order_goods` (
   PRIMARY KEY (`rec_id`),
   KEY `order_id` (`order_id`),
   KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_order_goods
@@ -2488,6 +2491,8 @@ INSERT INTO `ecs_order_goods` VALUES ('29', '18', '24', 'P806', 'ECS000024', '0'
 INSERT INTO `ecs_order_goods` VALUES ('30', '19', '12', '摩托罗拉A810', 'ECS000012', '0', '2', '1179.60', '933.85', '', '2', '1', '', '0', '0', '');
 INSERT INTO `ecs_order_goods` VALUES ('31', '19', '24', 'P806', 'ECS000024', '0', '2', '2400.00', '1850.00', '颜色:灰色 \n', '2', '1', '', '0', '0', '167');
 INSERT INTO `ecs_order_goods` VALUES ('32', '20', '17', '夏新N7', 'ECS000017', '0', '1', '2760.00', '2300.00', '', '0', '1', '', '0', '0', '');
+INSERT INTO `ecs_order_goods` VALUES ('33', '21', '25', '小灵通/固话50元充值卡', 'ECS000025', '0', '1', '57.59', '48.00', '', '0', '0', 'virtual_card', '0', '0', '');
+INSERT INTO `ecs_order_goods` VALUES ('34', '23', '19', '三星SGH-F258', 'ECS000019', '0', '1', '1029.60', '858.00', '', '0', '1', '', '0', '0', '');
 
 -- ----------------------------
 -- Table structure for ecs_order_info
@@ -2566,7 +2571,7 @@ CREATE TABLE `ecs_order_info` (
   KEY `pay_id` (`pay_id`),
   KEY `extension_code` (`extension_code`,`extension_id`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_order_info
@@ -2591,6 +2596,9 @@ INSERT INTO `ecs_order_info` VALUES ('17', '2009061503335', '1', '4', '0', '0', 
 INSERT INTO `ecs_order_info` VALUES ('18', '2009061510313', '1', '1', '0', '2', '刘先生', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', 'ecshop@ecshop.com', '', '', '', '3', '城际快递', '1', '余额支付', '等待所有商品备齐后再发', '', '', '', '', '', '', '500.00', '10.00', '0.00', '0.00', '0.00', '0.00', '0.00', '500.00', '0', '0.00', '0.00', '0.00', '0', '本站', '1245048585', '1245048585', '1245048585', '0', '0', '0', '0', '', 'group_buy', '8', '', '', '0', '', '0.00', '0', '0', '0.00');
 INSERT INTO `ecs_order_info` VALUES ('19', '2009061909851', '1', '1', '1', '2', '刘先生', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', 'ecshop@ecshop.com', '', '', '', '3', '城际快递', '1', '余额支付', '等待所有商品备齐后再发', '', '', '', '', '', '', '5567.70', '10.00', '0.00', '0.00', '0.00', '0.00', '0.00', '5577.70', '0', '0.00', '0.00', '0.00', '0', '本站', '1245384008', '1245384008', '1245384008', '1245384049', '0', '0', '0', '232421', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
 INSERT INTO `ecs_order_info` VALUES ('20', '2016031194995', '6', '0', '0', '0', 'chenjunjia', '1', '10', '141', '1143', 'a', 'a', 'a', '', '7', '', '', '', '5', '申通快递', '1', '余额支付', '', '', '', '', '', '', '', '2300.00', '15.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '2315.00', '0', '', '1457637400', '0', '0', '0', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
+INSERT INTO `ecs_order_info` VALUES ('21', '2016031142004', '0', '2', '0', '0', 'chenjunjia', '1', '24', '312', '2611', 'a', 'a', 'a', '13611460986', '475647150@qq.com', '', '', '', '3', '城际快递', '2', '银行汇款/转帐', '', '', '', '', '', '', '', '48.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '48.00', '0', '', '1457639685', '0', '0', '0', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
+INSERT INTO `ecs_order_info` VALUES ('22', '2016031654345', '6', '1', '0', '2', 'chenjunjia', '1', '10', '141', '1143', 'a', 'a', 'a', '', '7', '', '', '', '0', '', '0', '', '', '', '', '', '', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '0.00', '0', '', '1458082057', '1458082057', '1458082057', '0', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
+INSERT INTO `ecs_order_info` VALUES ('23', '2016031627839', '6', '0', '0', '0', '231', '1', '3', '139', '1105', '123', '525200', '123', '454', '123', '40', '04', '', '0', '', '2', '银行汇款/转帐', '', '', '', '', '', '', '', '858.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0.00', '0.00', '858.00', '0', '', '1458092547', '0', '0', '0', '0', '0', '0', '', '', '0', '', '', '0', '', '0.00', '0', '0', '0.00');
 
 -- ----------------------------
 -- Table structure for ecs_pack
@@ -2671,7 +2679,7 @@ CREATE TABLE `ecs_pay_log` (
   `order_type` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `is_paid` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_pay_log
@@ -2695,6 +2703,8 @@ INSERT INTO `ecs_pay_log` VALUES ('16', '16', '0.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('17', '17', '0.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('18', '18', '0.00', '0', '0');
 INSERT INTO `ecs_pay_log` VALUES ('19', '20', '2315.00', '0', '0');
+INSERT INTO `ecs_pay_log` VALUES ('20', '21', '48.00', '0', '0');
+INSERT INTO `ecs_pay_log` VALUES ('21', '23', '858.00', '0', '0');
 
 -- ----------------------------
 -- Table structure for ecs_plugins
@@ -6266,9 +6276,6 @@ CREATE TABLE `ecs_sessions` (
 -- ----------------------------
 -- Records of ecs_sessions
 -- ----------------------------
-INSERT INTO `ecs_sessions` VALUES ('e93e3abbdf79eb76fa66d59a1d4195ef', '1457666229', '6', '0', '127.0.0.1', 'cjjmem', '1', '1.00', '475647150@qq.com', 'a:3:{s:9:\"last_time\";s:1:\"0\";s:7:\"last_ip\";s:0:\"\";s:10:\"login_fail\";i:0;}');
-INSERT INTO `ecs_sessions` VALUES ('1c53eed80114433fa29cd07588580c3d', '1457665488', '0', '0', '127.0.0.1', '0', '0', '1.00', '0', 'a:4:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:6:\"本站\";s:10:\"login_fail\";i:0;s:12:\"captcha_word\";s:16:\"YWVlOWVlZjdkMA==\";}');
-INSERT INTO `ecs_sessions` VALUES ('f4f64f96a6804d1d941110da997e44ba', '1457665551', '0', '1', '127.0.0.1', '0', '0', '0.00', '0', 'a:5:{s:12:\"captcha_word\";s:16:\"NTg3N2E1ZGMyNg==\";s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1457636590;s:12:\"suppliers_id\";s:1:\"0\";}');
 
 -- ----------------------------
 -- Table structure for ecs_sessions_data
@@ -6285,7 +6292,7 @@ CREATE TABLE `ecs_sessions_data` (
 -- ----------------------------
 -- Records of ecs_sessions_data
 -- ----------------------------
-INSERT INTO `ecs_sessions_data` VALUES ('e93e3abbdf79eb76fa66d59a1d4195ef', '1457666174', 'a:5:{s:9:\"last_time\";s:1:\"0\";s:7:\"last_ip\";s:0:\"\";s:10:\"login_fail\";i:0;s:14:\"flow_consignee\";a:14:{s:10:\"address_id\";i:0;s:9:\"consignee\";s:10:\"chenjunjia\";s:7:\"country\";s:1:\"1\";s:8:\"province\";s:2:\"10\";s:4:\"city\";s:3:\"141\";s:8:\"district\";s:4:\"1143\";s:5:\"email\";s:1:\"7\";s:7:\"address\";s:1:\"a\";s:7:\"zipcode\";s:1:\"a\";s:3:\"tel\";s:1:\"a\";s:6:\"mobile\";s:0:\"\";s:13:\"sign_building\";s:0:\"\";s:9:\"best_time\";s:0:\"\";s:7:\"user_id\";s:1:\"6\";}s:10:\"flow_order\";a:7:{s:11:\"shipping_id\";i:0;s:6:\"pay_id\";i:0;s:7:\"pack_id\";i:0;s:7:\"card_id\";i:0;s:5:\"bonus\";i:0;s:8:\"integral\";i:0;s:7:\"surplus\";i:0;}}');
+INSERT INTO `ecs_sessions_data` VALUES ('35f8d6fdf184fa7cf887e5307abff750', '2916242740', 'a:6:{s:14:\"display_search\";s:4:\"grid\";s:9:\"last_time\";s:10:\"1458082020\";s:7:\"last_ip\";s:9:\"127.0.0.1\";s:10:\"login_fail\";i:0;s:14:\"flow_consignee\";a:14:{s:10:\"address_id\";i:0;s:9:\"consignee\";s:3:\"231\";s:7:\"country\";s:1:\"1\";s:8:\"province\";s:1:\"3\";s:4:\"city\";s:3:\"139\";s:8:\"district\";s:4:\"1105\";s:5:\"email\";s:3:\"123\";s:7:\"address\";s:3:\"123\";s:7:\"zipcode\";s:6:\"525200\";s:3:\"tel\";s:3:\"123\";s:6:\"mobile\";s:3:\"454\";s:13:\"sign_building\";s:2:\"04\";s:9:\"best_time\";s:2:\"40\";s:7:\"user_id\";s:1:\"6\";}s:10:\"flow_order\";a:7:{s:11:\"shipping_id\";s:1:\"0\";s:6:\"pay_id\";s:1:\"2\";s:7:\"pack_id\";i:0;s:7:\"card_id\";i:0;s:5:\"bonus\";i:0;s:8:\"integral\";i:0;s:7:\"surplus\";i:0;}}');
 
 -- ----------------------------
 -- Table structure for ecs_shipping
@@ -6628,6 +6635,10 @@ INSERT INTO `ecs_stats` VALUES ('1245219380', '0.0.0.0', '499', 'FireFox 3.0.11'
 INSERT INTO `ecs_stats` VALUES ('1245222219', '0.0.0.0', '500', 'FireFox 3.0.11', 'Windows XP', 'zh-cn', 'IANA', 'http://localhost:8080', '/shouji/admin/goods.php?act=list', '/shouji/goods.php');
 INSERT INTO `ecs_stats` VALUES ('1457634268', '127.0.0.1', '3', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', 'http://market.com', '/admin/index.php?act=top', '/index.php');
 INSERT INTO `ecs_stats` VALUES ('1457635472', '127.0.0.1', '4', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
+INSERT INTO `ecs_stats` VALUES ('1457896075', '127.0.0.1', '5', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
+INSERT INTO `ecs_stats` VALUES ('1457905726', '127.0.0.1', '6', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
+INSERT INTO `ecs_stats` VALUES ('1458089261', '127.0.0.1', '7', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
+INSERT INTO `ecs_stats` VALUES ('1458151532', '127.0.0.1', '1', 'Safari 537.36', 'Windows NT', 'zh-CN,zh', 'LAN', '', '', '/index.php');
 
 -- ----------------------------
 -- Table structure for ecs_suppliers
@@ -6834,7 +6845,7 @@ INSERT INTO `ecs_users` VALUES ('1', 'ecshop@ecshop.com', 'ecshop', '554fcae493e
 INSERT INTO `ecs_users` VALUES ('2', 'vip@ecshop.com', 'vip', '232059cb5361a9336ccf1b8c2ba7657a', '', '', '0', '1949-01-01', '0.00', '0.00', '0', '0', '0', '0', '0', '0000-00-00 00:00:00', '', '0', '0', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
 INSERT INTO `ecs_users` VALUES ('3', 'text@ecshop.com', 'text', '1cb251ec0d568de6a929b520c4aed8d1', '', '', '0', '1949-01-01', '0.00', '0.00', '0', '0', '2', '0', '1242973574', '0000-00-00 00:00:00', '0.0.0.0', '2', '0', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
 INSERT INTO `ecs_users` VALUES ('5', 'zuanshi@ecshop.com', 'zuanshi', '815a71fb334412e7ba4595741c5a111d', '', '', '0', '1949-01-01', '0.00', '10000.00', '0', '0', '0', '0', '0', '0000-00-00 00:00:00', '', '0', '3', '0', null, '0', '0', '0', '', '', '', '', '', '', '0', '0.00', null, null);
-INSERT INTO `ecs_users` VALUES ('6', '475647150@qq.com', 'cjjmem', 'e10adc3949ba59abbe56e057f20f883e', '', '', '0', '2016-03-16', '0.00', '0.00', '0', '0', '3', '1457637342', '1457637342', '2016-03-23 11:31:43', '127.0.0.1', '1', '0', '0', null, '0', '0', '0', '', '', '475647150', '', '', '13611460986', '0', '0.00', 'friend_birthday', '10');
+INSERT INTO `ecs_users` VALUES ('6', '475647150@qq.com', '475647150@qq.com', '2ef33f19ca26712121bec460e20b18a9', '', '', '0', '2016-03-16', '0.00', '0.00', '0', '0', '6', '1457637342', '1458174253', '2016-03-23 11:31:43', '127.0.0.1', '13', '0', '0', '8487', '0', '0', '0', '', '', '475647150', '', '', '13611460986', '0', '0.00', 'friend_birthday', '10');
 
 -- ----------------------------
 -- Table structure for ecs_user_account
@@ -6883,7 +6894,7 @@ CREATE TABLE `ecs_user_address` (
   `best_time` varchar(120) NOT NULL DEFAULT '',
   PRIMARY KEY (`address_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ecs_user_address
@@ -6891,6 +6902,9 @@ CREATE TABLE `ecs_user_address` (
 INSERT INTO `ecs_user_address` VALUES ('1', '', '1', '刘先生', 'ecshop@ecshop.com', '1', '2', '52', '502', '海兴大厦', '', '010-25851234', '13986765412', '', '');
 INSERT INTO `ecs_user_address` VALUES ('2', '', '3', '叶先生', 'text@ecshop.com', '1', '2', '52', '510', '通州区旗舰凯旋小区', '', '13588104710', '', '', '');
 INSERT INTO `ecs_user_address` VALUES ('3', '', '6', 'chenjunjia', '7', '1', '10', '141', '1143', 'a', 'a', 'a', '', '', '');
+INSERT INTO `ecs_user_address` VALUES ('4', '', '6', '231', '123', '1', '3', '139', '1105', '123', '525200', '123', '454', '04', '40');
+INSERT INTO `ecs_user_address` VALUES ('5', '', '6', '231', '123', '1', '3', '139', '1105', '123', '525200', '123', '454', '04', '40');
+INSERT INTO `ecs_user_address` VALUES ('6', '', '6', '231', '123', '1', '3', '139', '1105', '123', '525200', '123', '454', '04', '40');
 
 -- ----------------------------
 -- Table structure for ecs_user_bonus

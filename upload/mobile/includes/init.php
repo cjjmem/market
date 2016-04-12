@@ -78,6 +78,7 @@ require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 require(ROOT_PATH . 'includes/lib_time.php');
 require(ROOT_PATH . 'includes/lib_main.php');
+//引用底部文件
 require(ROOT_PATH . 'mobile/includes/lib_main.php');
 require(ROOT_PATH . 'includes/inc_constant.php');
 require(ROOT_PATH . 'includes/cls_error.php');
