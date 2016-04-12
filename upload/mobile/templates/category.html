@@ -102,11 +102,11 @@
     </div>
     <div class="new-jd-tab" style="display:none" id="jdkey">
         <div class="new-tbl-type">
-            <a href="../index.html@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
+            <a href="index.php" class="new-tbl-cell">
                 <span class="icon">首页</span>
                 <p style="color:#6e6e6e;">首页</p>
             </a>
-            <a href="all.html@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
+            <a href="category.php" class="new-tbl-cell">
                 <span class="icon2">分类搜索</span>
                 <p style="color:#6e6e6e;">分类搜索</p>
             </a>
@@ -114,47 +114,84 @@
                 <span class="icon3">购物车</span>
                 <p style="color:#6e6e6e;">购物车</p>
             </a>
-            <a href="../user/home.action@sid=e0d0f025d6d3e8e8d7be5428c43ef911" class="new-tbl-cell">
-                <span class="icon4">我的京东</span>
-                <p style="color:#6e6e6e;">我的京东</p>
+            <a href="user.php" class="new-tbl-cell">
+                <span class="icon4">个人中心</span>
+                <p style="color:#6e6e6e;">个人中心</p>
             </a>
         </div>
     </div>
 </header>
-<form action="/ware/search.action" id="searchForm">
-    <input name="sid" value="e0d0f025d6d3e8e8d7be5428c43ef911" type="hidden" />
+<form action="category.php" id="searchForm">
+    <input name="sid" value="" type="hidden" />
     <div class="new-cate-srch">
         <div class="new-srch-box">
-            <input name="keyword" id="newkeyword" type="text" required class="new-srch-input" value="JDPhone"><a href="javascript:void(0);" target="_self" onclick="cancelHotWord()" class="new-s-close"></a><a href="javascript:void(0)" target="_self" onclick="$('#searchForm').submit();" class="new-s-srch"><span></span></a>
+            <input name="keyword" id="newkeyword" type="text" required class="new-srch-input" value=""><a href="javascript:void(0);" target="_self" onclick="cancelHotWord()" class="new-s-close"></a><a href="javascript:void(0)" target="_self" onclick="$('#searchForm').submit();" class="new-s-srch"><span></span></a>
         </div>
         <div class="new-srch-lst" id="shelper" style="display:none">
         </div>
     </div>
 </form>
 
-<div class="new-ct">
-<div class="new-category">
-<ul class="new-category-lst">
-
-    {foreach from=$cat_array key=k item=cat_data}
-        <li class="new-category-li">
-            <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span>{$cat_data.name}</a>
-            <ul class="new-category2-lst" id="category{$k}" style="display:none">
-
-        {foreach from=$cat_data['cat_id']  item=ccat_data}
-             <li class="new-category2-li" >
-                 <a href='category.php?c_id={$ccat_data.id}' class="new-category2-a"><span class="new-bar"></span>{$ccat_data.name}</a>
-             </li>
-
-        {/foreach}
+{if $all_cat}
+    <div class="new-ct">
+        <div class="new-category">
+            <ul class="new-category-lst">
+                {foreach from=$cat_array key=k item=cat_data}
+                    <li class="new-category-li">
+                        <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span>{$cat_data.name}</a>
+                        <ul class="new-category2-lst" id="category{$k}" style="display:none">
+                            {foreach from=$cat_data['cat_id']  item=ccat_data}
+                                <li class="new-category2-li" >
+                                    <a href='category.php?c_id={$ccat_data.id}' class="new-category2-a"><span class="new-bar"></span>{$ccat_data.name}</a>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    </li>
+                {/foreach}
             </ul>
-        </li>
-    {/foreach}
-</ul>
+        </div>
+    </div>
+{else}
+    <div class="new-ct">
+        <div class="new-category">
+        {if $smarty.get.order_price}
+        当前为价格降序排列，<a href='category.php?c_id={$smarty.get.c_id}{if $smarty.get.page}&page={$smarty.get.page}{/if}'>转换成价格升序排列</a>
+        {else}
+        当前为价格升序排列，<a href='category.php?c_id={$smarty.get.c_id}&order_price=1{if $smarty.get.page}&page={$smarty.get.page}{/if}'>转换成价格降序排列</a>
+        {/if}<br/><br/>
+    </div>
+{if $cat_children}
+下级分类<br/>
+{foreach from=$cat_children item=child_data}
+<a href='category.php?c_id={$child_data.id}'>{$child_data.name}</a><br/>
+{/foreach}
+--------------<br/>
+{/if}
+
+    {foreach from=$goods_data item=goods}
+        {$goods.i}.<a href='goods.php?id={$goods.id}'>{$goods.name}</a>[{$goods.price}]<br/>
+    {foreachelse}
+        暂无此类商品<br/>
+    {/foreach}<br/>
+
+    {if $pagebar}
+        {$pagebar}<br/>
+    {/if}
+    </div>
+</div>
+
+{/if}
+
+<a href="javascript:history.back(-1)">回上一页</a><br/>
+{if $pcat_array}
+<a href='category.php?c_id={$pcat_array.cat_id}'>回{$pcat_array.cat_name}</a><br/>
+{/if}
+{if $c_id}
+<a href='category.php'>回所有分类</a><br/>
+{/if}
+<a href='index.php'>返回首页</a>
 
 
-</div>
-</div>
 <script language="javascript">
     $(function(){
         $("li.new-category-li>a").click(function(){
