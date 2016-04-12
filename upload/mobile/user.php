@@ -44,9 +44,6 @@ if ($act == 'do_login')
             $login_faild = 1;
         }
     }
-    $smarty->assign('footer', get_footer());
-    $smarty->display('login.html');
-
 }
 
 elseif ($act == 'order_list')
@@ -188,12 +185,11 @@ elseif ($act == 'register')
 }
 /* 注册会员的处理 */
 elseif ($act == 'act_register')
-{		
-	
+{
         include_once(ROOT_PATH . 'includes/lib_passport.php');
+
         $username = isset($_POST['username']) ? trim($_POST['username']) : '';
         $password = isset($_POST['password']) ? trim($_POST['password']) : '';
-		$repassword = isset($_POST['password_PwdTwo']) ? trim($_POST['password_PwdTwo']) : '';
         $email    = isset($_POST['email']) ? trim($_POST['email']) : '';
         $other['msn'] = isset($_POST['extend_field1']) ? $_POST['extend_field1'] : '';
         $other['qq'] = isset($_POST['extend_field2']) ? $_POST['extend_field2'] : '';
@@ -206,8 +202,7 @@ elseif ($act == 'act_register')
         $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
 
         if (m_register($username, $password, $email, $other) !== false)
-        {	
-		
+        {
             /*把新注册用户的扩展信息插入数据库*/
             $sql = 'SELECT id FROM ' . $ecs->table('reg_fields') . ' WHERE type = 0 AND display = 1 ORDER BY dis_order, id';   //读出所有自定义扩展字段的id
             $fields_arr = $db->getAll($sql);
@@ -223,6 +218,7 @@ elseif ($act == 'act_register')
                 }
             }
             $extend_field_str = substr($extend_field_str, 0, -1);
+
             if ($extend_field_str)      //插入注册扩展数据
             {
                 $sql = 'INSERT INTO '. $ecs->table('reg_extend_info') . ' (`user_id`, `reg_field_id`, `content`) VALUES' . $extend_field_str;
@@ -245,7 +241,6 @@ elseif ($act == 'act_register')
 /* 用户中心 */
 else
 {
-
     if ($_SESSION['user_id'] > 0)
     {
         show_user_center();

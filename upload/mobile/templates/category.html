@@ -8,13 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
-
     <link rel="stylesheet" type="text/css" href="../css/base2013.css" charset="gbk"/>
-
-
     <link rel="stylesheet" type="text/css" href="../css/2013/category/all_html5.css" charset="gbk"/>
-
-
     <link rel="apple-touch-icon-precomposed" href="../../m.jd.com/images/apple-touch-icon.png"/>
     <script type="text/javascript">
         var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
@@ -98,7 +93,7 @@
     <div class="new-header">
         <a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
         <h2>商品分类</h2>
-        <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+        <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>行院键</span></a>
     </div>
     <div class="new-jd-tab" style="display:none" id="jdkey">
         <div class="new-tbl-type">
@@ -138,7 +133,7 @@
             <ul class="new-category-lst">
                 {foreach from=$cat_array key=k item=cat_data}
                     <li class="new-category-li">
-                        <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span>{$cat_data.name}</a>
+                        <a href="javascript:void(0)" id="{$cat_data.}" class="new-category-a"><span class="icon"></span><span onclick="location.href='category.php?c_id={$ccat_data.id}' ">{$cat_data.name}</span></a>
                         <ul class="new-category2-lst" id="category{$k}" style="display:none">
                             {foreach from=$cat_data['cat_id']  item=ccat_data}
                                 <li class="new-category2-li" >
@@ -152,28 +147,29 @@
         </div>
     </div>
 {else}
+    <style>
+        .up{ background: url('images/touch2013/index/_40img1_1.png')}
+    </style>
+
     <div class="new-ct">
         <div class="new-category">
         {if $smarty.get.order_price}
-        当前为价格降序排列，<a href='category.php?c_id={$smarty.get.c_id}{if $smarty.get.page}&page={$smarty.get.page}{/if}'>转换成价格升序排列</a>
+            <a href='category.php?c_id={$smarty.get.c_id}{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序<span ><img src="images/touch2013/index/_40img1_1.png"></span></a>
         {else}
-        当前为价格升序排列，<a href='category.php?c_id={$smarty.get.c_id}&order_price=1{if $smarty.get.page}&page={$smarty.get.page}{/if}'>转换成价格降序排列</a>
-        {/if}<br/><br/>
+            <a href='category.php?c_id={$smarty.get.c_id}&order_price=1{if $smarty.get.page}&page={$smarty.get.page}{/if}'>价格排序</a>
+        {/if}
     </div>
 {if $cat_children}
 下级分类<br/>
-{foreach from=$cat_children item=child_data}
-<a href='category.php?c_id={$child_data.id}'>{$child_data.name}</a><br/>
-{/foreach}
---------------<br/>
+    {foreach from=$cat_children item=child_data}
+    <a href='category.php?c_id={$child_data.id}'>{$child_data.name}</a><br/>
+    {/foreach}
 {/if}
-
     {foreach from=$goods_data item=goods}
         {$goods.i}.<a href='goods.php?id={$goods.id}'>{$goods.name}</a>[{$goods.price}]<br/>
     {foreachelse}
         暂无此类商品<br/>
     {/foreach}<br/>
-
     {if $pagebar}
         {$pagebar}<br/>
     {/if}
