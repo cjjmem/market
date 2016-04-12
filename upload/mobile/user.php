@@ -29,6 +29,9 @@ if ($act == 'do_login')
     if (empty($user_name) || empty($pwd))
     {
         $login_faild = 1;
+        $smarty->assign('login_faild', $login_faild);
+        $smarty->assign('footer', get_footer());
+        $smarty->display('login.html');
     }
     else
     {
@@ -42,6 +45,9 @@ if ($act == 'do_login')
         else
         {
             $login_faild = 1;
+            $smarty->assign('login_faild', $login_faild);
+            $smarty->assign('footer', get_footer());
+            $smarty->display('login.html');
         }
     }
 }
@@ -151,7 +157,9 @@ elseif ($act == 'logout')
         $back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
     }
 
+
     $user->logout();
+    unset($_SESSION['user_id']);
     $Loaction = 'index.php';
     ecs_header("Location: $Loaction\n");
 
@@ -180,6 +188,10 @@ elseif ($act == 'register')
     $_LANG['passwd_questions']['favorite_equipe'] = '我最喜欢的运动队？';
     /* 密码提示问题 */
     $smarty->assign('passwd_questions', $_LANG['passwd_questions']);
+    if($_SESSION['sc_reg_error']){
+        $smarty->assign('sc_reg_error', $_SESSION['sc_reg_error']);
+        unset($_SESSION['sc_reg_error']);
+    }
     $smarty->assign('footer', get_footer());
     $smarty->display('user_passport.html');
 }
@@ -257,18 +269,23 @@ else
  */
 function show_user_center()
 {
-    $best_goods = get_recommend_goods('best');
-    if (count($best_goods) > 0)
-    {
-        foreach  ($best_goods as $key => $best_data)
+    if($_SESSION['user_id']){
+        $best_goods = get_recommend_goods('best');
+        if (count($best_goods) > 0)
         {
-            $best_goods[$key]['shop_price'] = encode_output($best_data['shop_price']);
-            $best_goods[$key]['name'] = encode_output($best_data['name']);
+            foreach  ($best_goods as $key => $best_data)
+            {
+                $best_goods[$key]['shop_price'] = encode_output($best_data['shop_price']);
+                $best_goods[$key]['name'] = encode_output($best_data['name']);
+            }
         }
+        $GLOBALS['smarty']->assign('best_goods' , $best_goods);
+        $GLOBALS['smarty']->assign('footer', get_footer());
+        $GLOBALS['smarty']->display('user.html');
+    }else{
+        echo "请登录";
+        //ecs_header("Location: $Loaction\n");
     }
-    $GLOBALS['smarty']->assign('best_goods' , $best_goods);
-    $GLOBALS['smarty']->assign('footer', get_footer());
-    $GLOBALS['smarty']->display('user.html');
 }
 
 /**
@@ -279,14 +296,14 @@ function m_register($username, $password, $email, $other = array())
     /* 检查username */
     if (empty($username))
     {
-        echo '用户名不能为空';
+        $_SESSION['sc_reg_error']= '用户名不能为空';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
     }
     if (preg_match('/\'\/^\\s*$|^c:\\\\con\\\\con$|[%,\\*\\"\\s\\t\\<\\>\\&\'\\\\]/', $username))
     {
-        echo '用户名错误';
+        $_SESSION['sc_reg_error']= '用户名错误';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
@@ -295,14 +312,14 @@ function m_register($username, $password, $email, $other = array())
     /* 检查email */
     if (empty($email))
     {
-        echo 'email不能为空';
+        $_SESSION['sc_reg_error']= 'email不能为空';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
     }
     if(!is_email($email))
     {
-        echo 'email错误';
+        $_SESSION['sc_reg_error']= 'email错误';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
@@ -311,7 +328,7 @@ function m_register($username, $password, $email, $other = array())
     /* 检查是否和管理员重名 */
     if (admin_registered($username))
     {
-        echo '此用户已存在！';
+        $_SESSION['sc_reg_error']= '此用户已存在！';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;
@@ -319,7 +336,7 @@ function m_register($username, $password, $email, $other = array())
 
     if (!$GLOBALS['user']->add_user($username, $password, $email))
     {
-        echo '注册失败！';
+        $_SESSION['sc_reg_error']='注册失败！';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         //注册失败

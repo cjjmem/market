@@ -29,6 +29,7 @@
                 layer.tips('请输入登录密码','#password', {tips: 1});
                 return false;
             }
+            $('#passwords').val(password);
         });
     });
 </script>
@@ -51,44 +52,53 @@
 
     <div class="w main">
         <form id="frm_login" method="post"  action="user.php?act=do_login" >
+
+            {if $login_faild eq 1}
+            <div class="item ">
+                <b style="color: #f00;" >用户名或密码错误,请重新输入</b>
+            </div>
+            {/if}
             <div class="item item-username">
                 <input id="username" class="txt-input txt-username" type="text" placeholder="请输入用户名/邮箱/手机号" value="" name="username">
                 <b class="input-close" style="display: none;"></b> </div>
             <div class="item item-password">
-                <input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="pwd" style="display: inline;">
+                <input id="passwords" type="hidden" name="pwd" >
+                <input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="pwds" style="display: inline;">
                 <input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext">
                 <b class="tp-btn btn-off"></b>
             </div>
-            <div class="item item-login-option">
-                <div class="aoutlogin">
-                    <label class="ui-checkbox ui-checkbox-s">
-                        <input type="checkbox" name="checkbox" checked/>一个月内免登录
-                    </label>
-                </div>
-                <span class="retrieve-password"> <a class="" href="getpwd_email.html"> 找回密码</a> </span>
-            </div>
+            <!--<div class="item item-login-option">-->
+                <!--<div class="aoutlogin">-->
+                    <!--<label class="ui-checkbox ui-checkbox-s">-->
+                        <!--<input type="checkbox" name="checkbox" checked/>一个月内免登录-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<span class="retrieve-password"> <a class="" href="getpwd_email.html"> 找回密码</a> </span>-->
+            <!--</div>-->
             <div class="ui-btn-wrap"><input name="" type="submit" value="用户登录"  class="ui-btn-lg ui-btn-primary" /> </div>
             <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-danger" href="user.php?act=register" >没有账号？立即注册</a> </div>
-            <div class="item item-login-other">
-                <dl>
-                    <dt>其它登录方式</dt>
-                    <dd> <a class="qq" href="#"> <span><img alt="" src="images/login_qq.png" width="40" height="40"></span> </a> </dd>
-                </dl>
-            </div>
+            <!--<div class="item item-login-other">-->
+                <!--<dl>-->
+                    <!--<dt>其它登录方式</dt>-->
+                    <!--<dd> <a class="qq" href="#"> <span><img alt="" src="images/login_qq.png" width="40" height="40"></span> </a> </dd>-->
+                <!--</dl>-->
+            <!--</div>-->
         </form>
     </div>
 
-    <div class="m_user w">
-        <a href="user.php?act=login">登录</a>
-        <a href="user.php?act=register">注册</a>
-        <a href="#">返回顶部</a>
-    </div>
+    <!--<div class="m_user w">-->
+        <!--<a href="user.php?act=login">登录</a>-->
+        <!--<a href="user.php?act=register">注册</a>-->
+        <!--<a href="#">返回顶部</a>-->
+    <!--</div>-->
     <!--<div class="footer w">
         <a href="#"><div class="ico_img"><img src="images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
         <a href="index.html"><div class="ico_img"><img src="images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
         <a href="#"><div class="ico_img"><img src="images/178hui-diannao.png"></div><span>电脑版</span></a>
-    </div>-->
-    <div class="copyright">Copyright © 2016 行院实超 版权所有</div>
+    </div>
+    Copyright © 2016 行院实超 版权所有
+    -->
+    <div class="copyright">{$footer}</div>
 </div>
 </body>
 </html>
@@ -160,4 +170,4 @@
             $(this).siblings(".input-close").hide();
         }
     });
-</script> 
+</script>

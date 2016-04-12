@@ -8,6 +8,7 @@
     <link href="css/public.css" rel="stylesheet" type="text/css" />
     <link href="css/login.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/layer/layer.js"></script>
     <script>
         $(window).load(function() {
             $("#status").fadeOut();
@@ -34,55 +35,101 @@
     <!--header 结束-->
 
     <div class="w main">
-        <form id="frm_login" method="post" action="user.php?act=act_register">
+        <form id="frm_login" action="user.php?act=act_register" method="post" name="formUser">
+            {if $sc_reg_error}
+            <div class="item ">
+                <b style="color: #f00;" >{$sc_reg_error}</b>
+            </div>
+            {/if}
             <div class="item item-username">
                 <input id="username" class="txt-input txt-username" type="text" placeholder="请输入用户名" value="" name="username">
-                <b class="input-close" style="display: none;"></b> </div>
-            <div class="item item-password">
-                <input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" name="password" style="display: inline;">
-                <input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;" name="ptext">
-                <b class="tp-btn btn-off"></b> </div>
-            <div class="item item-password">
-                <input id="password_PwdTwo" class="txt-input txt-password_PwdTwo ciphertext_PwdTwo" type="password" placeholder="确认密码" name="password_PwdTwo" style="display: inline;">
-                <input id="ptext_PwdTwo" class="txt-input txt-password_PwdTwo plaintext_PwdTwo" type="text" placeholder="确认密码" style="display: none;" name="ptext_PwdTwo">
-                <b class="tp-btn_PwdTwo btn-off_PwdTwo"></b> </div>
+                <b class="input-close" style="display: none;"></b>
+            </div>
             <div class="item item-username">
                 <input id="email" class="txt-input txt-username" type="text" placeholder="请输入邮箱" value="" name="email">
-                <b class="input-close" style="display:none;"></b> </div>
+                <b class="input-close" style="display:none;"></b>
+            </div>
+            <div class="item item-password">
+                <input id="passwords"  type="hidden" name="password">
+                <input id="password" class="txt-input txt-password ciphertext" type="password" placeholder="请输入密码" style="display: inline;">
+                <input id="ptext" class="txt-input txt-password plaintext" type="text" placeholder="请输入密码" style="display: none;">
+                <b class="tp-btn btn-off"></b>
+            </div>
+            <div class="item item-password">
+                <input id="passwords2"  type="hidden" name="confirm_password">
+                <input id="password_PwdTwo" class="txt-input txt-password_PwdTwo ciphertext_PwdTwo" type="password" placeholder="确认密码" style="display: inline;">
+                <input id="ptext_PwdTwo" class="txt-input txt-password_PwdTwo plaintext_PwdTwo" type="text" placeholder="确认密码" style="display: none;" >
+                <b class="tp-btn_PwdTwo btn-off_PwdTwo"></b>
+            </div>
+
+            <!-- {foreach from=$extend_info_list item=field} -->
+            <!-- {if $field.id eq 6} -->
             <div class="item item-username">
-                <input id="qq" class="txt-input txt-username" type="text" placeholder="请输入QQ号码" value="" name="qq">
-                <b class="input-close" style="display:none;"></b> 
+                <select name='sel_question' class="txt-input txt-username">
+                    <option value='0'>请选择密码提示问题</option>
+                    {html_options options=$passwd_questions}
+                </select>
             </div>
-             <div class="item item-username">
-             	<lable><?php echo $_GET['tips'];?></lable>
-             </div>
-            <div class="item item-captcha">
-                <div class="input-info" style="display:none;">
-                    <input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">
-                    <b id="validateCodeclose" class="input-close" onClick="validateCodeclose();" style="display: block; margin-right:15px;"></b> <span id="captcha-img"> <img id="code" src="images/code.jpg" style="width:63px;height:25px;" onClick="closeAndFlush();"> </span> </div>
-                <div class="err-tips"> 注册即视为同意 <a target="_blank" href="#">用户服务协议</a> </div>
+            <div class="item item-username">
+                <input class="txt-input txt-username" type="text" maxlengt='20' placeholder="请输入密码问题答案" value="" name="passwd_answer">
             </div>
-            <div class="ui-btn-wrap"> <button class="ui-btn-lg ui-btn-primary" style="border:0;" type="submit">用户注册</button> </div>
+            <!-- {else} -->
+
+            <div class="item item-username">
+                <input class="txt-input txt-username" type="text"  placeholder="请输入{$field.reg_field_name}" value="" name="extend_field{$field.id}">
+            </div>
+            <!-- {/if} -->
+            <!-- {/foreach} -->
+
+
+             <!--<div class="item item-username">-->
+             	<!--<lable><?php echo $_GET['tips'];?></lable>-->
+             <!--</div>-->
+            <!--<div class="item item-captcha">-->
+                <!--<div class="input-info" style="display:none;">-->
+                    <!--<input id="validateCode" class="txt-input txt-captcha" type="text" placeholder="验证码" autocomplete="off" maxlength="6" size="11">-->
+                    <!--<b id="validateCodeclose" class="input-close" onClick="validateCodeclose();" style="display: block; margin-right:15px;"></b> <span id="captcha-img"> <img id="code" src="images/code.jpg" style="width:63px;height:25px;" onClick="closeAndFlush();"> </span> </div>-->
+                <!--<div class="err-tips"> 注册即视为同意 <a target="_blank" href="#">用户服务协议</a> </div>-->
+            <!--</div>-->
+            <div class="ui-btn-wrap">
+                <input name="act" type="hidden" value="act_register" >
+                <input type="hidden" name="back_act" value="{$back_act}" />
+                <input name="Submit" class="ui-btn-lg ui-btn-primary" style="border:0;" type="submit" value="立即注册">
+            </div>
             <div class="ui-btn-wrap"> <a class="ui-btn-lg ui-btn-danger" href="user.php?act=login">已有账号？立即登录</a> </div>
         </form>
     </div>
 
-    <div class="m_user w">
-         <a href="user.php?act=login">登录</a>
-        <a href="user.php?act=register">注册</a>
-        <a href="#">返回顶部</a>
-    </div>
-    <!--<div class="footer w">
-        <a href="#"><div class="ico_img"><img src="images/178hui-app.png"></div><span style="color:#00bb9c">客户端</span></a>
-        <a href="index.html"><div class="ico_img"><img src="images/178hui-shouji.png"></div><span style="color:#eb4f38">触摸版</span></a>
-        <a href="#"><div class="ico_img"><img src="images/178hui-diannao.png"></div><span>电脑版</span></a>
-    </div>-->
-    <div class="copyright">Copyright © 2016 行院实超 版权所有</div>
+    <div class="copyright">{$footer}</div>
 </div>
 </body>
 </html>
 <script type="text/javascript" >
     $(function() {
+        $("#frm_login").submit(function(e){
+            var username = $.trim($("#username").val());
+            var password = $.trim($("#password").val());
+            var password_PwdTwo = $.trim($("#password_PwdTwo").val());
+            var email = $.trim($("#email").val());
+            if(username == ''){
+                layer.tips('请输入用户名','#username', {tips: 1});
+                return false;
+            }
+            if(password == ''){
+                layer.tips('请输入登录密码','#password', {tips: 1});
+                return false;
+            }
+            if(password_PwdTwo == ''){
+                layer.tips('请输入登录密码','#password_PwdTwo', {tips: 1});
+                return false;
+            }
+            if(email == ''){
+                layer.tips('请输入邮箱','#email', {tips: 1});
+                return false;
+            }
+            $('#passwords').val(password);
+            $('#passwords2').val(password_PwdTwo);
+        });
         $(".input-close").hide();
         displayPwd();
         displayPwd_PwdTwo();
@@ -174,4 +221,4 @@
             $(this).siblings(".input-close").hide();
         }
     });
-</script> 
+</script>
