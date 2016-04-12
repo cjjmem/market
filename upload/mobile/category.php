@@ -82,13 +82,14 @@ else
             $page = $pages;
         }
         $i = 1;
+
         foreach ($cat_goods['goods'] as $goods_data)
         {
             if (($i > ($page_num * ($page - 1 ))) && ($i <= ($page_num * $page)))
             {
                 $price = empty($goods_info['promote_price_org']) ? $goods_data['shop_price'] : $goods_data['promote_price'];
                 //$wml_data .= "<a href='goods.php?id={$goods_data['id']}'>".encode_output($goods_data['name'])."</a>[".encode_output($price)."]<br/>";
-                $data[] = array('i' => $i , 'price' => encode_output($price) , 'id' => $goods_data['id'] , 'name' => encode_output($goods_data['name']));
+                $data[] = array('i' => $i , 'price' => encode_output($price) , 'id' => $goods_data['id'] , 'name' => encode_output($goods_data['name'] )  , 'img' => $goods_data['goods_img'] , 'brief' => $goods_data['brief']);
             }
             $i++;
         }
@@ -103,6 +104,8 @@ else
         $pcat_array[1]['cat_name'] = encode_output($pcat_array[1]['cat_name']);
         $smarty->assign('pcat_array', $pcat_array[1]);
     }
+    print_r($$data);
+
 
     $smarty->assign('cat_array', $cat_array);
 }
